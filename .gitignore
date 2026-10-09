@@ -1,0 +1,20 @@
+# rules repository cloned as a subdirectory (see aimd/AGENTS.md); never committed
+aimd/
+# local drafts in the user's language (aimd rules section 25)
+local/
+*.zh.md
+# chenyi9: decision start — 2026-09-26 ruling: the Chinese research plans stay local
+plan/
+# chenyi9: decision end
+# reference PDFs are large binaries; ref/README.md keeps the index and checksums
+ref/*.pdf
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+# chenyi9: decision start — 2026-09-26 ruling: no run output enters git, summaries and plots included
+# run products (aimd rules section 21): every results directory stays out of git; docs/coverage.md
+# and the bottleneck/plot scripts regenerate the committed views from a named directory
+eval/results/
+*.log
+# chenyi9: decision end

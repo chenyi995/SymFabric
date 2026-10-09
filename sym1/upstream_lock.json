@@ -1,0 +1,552 @@
+{
+  "recorded_at_utc": "2026-09-26T23:35:38.879874+00:00",
+  "provenance": "measured from local Git checkouts; fsck connectivity and submodule status checked",
+  "repositories": [
+    {
+      "name": "gapbs",
+      "path": "softwareworkload/upstream/gapbs",
+      "url": "https://github.com/sbeamer/gapbs.git",
+      "purpose": "CPU graph BFS, SSSP and triangle baseline",
+      "commit": "2972aeb2703165bafd921222f4ed7196f542d3a8",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "souffle",
+      "path": "softwareworkload/upstream/souffle",
+      "url": "https://github.com/souffle-lang/souffle.git",
+      "purpose": "CPU Datalog and semi-naive fixpoint",
+      "commit": "a1303be3c0166400dee3d1f36f0d96abe03e6901",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "gdlog",
+      "path": "softwareworkload/upstream/gdlog",
+      "url": "https://github.com/harp-lab/gdlog.git",
+      "purpose": "GPU Datalog runtime and benchmark programs",
+      "commit": "65a6ee960ced8d04bc725ccdfa68f004f8479226",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "vflog",
+      "path": "softwareworkload/upstream/vflog",
+      "url": "https://github.com/harp-lab/vflog.git",
+      "purpose": "Columnar GPU Datalog baseline",
+      "commit": "fe1dcdc84b83ff2dd7a32015614c43a423c18504",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "srdatalog-python",
+      "path": "softwareworkload/upstream/srdatalog-python",
+      "url": "https://github.com/harp-lab/srdatalog-python.git",
+      "purpose": "Author-group SRDatalog frontend/runtime; paper artifact revision requires alignment",
+      "commit": "114331cec452ec4dd9050e1e937d5c2a481e85ce",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "Lobster",
+      "path": "softwareworkload/upstream/Lobster",
+      "url": "https://github.com/P-bibs/Lobster.git",
+      "purpose": "GPU provenance-semiring Datalog",
+      "commit": "76a151f01a81b902606a7423bc0772d2e337532c",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "scallop",
+      "path": "softwareworkload/upstream/scallop",
+      "url": "https://github.com/scallop-lang/scallop.git",
+      "purpose": "Neurosymbolic Datalog workloads and reference implementation",
+      "commit": "668bfb6d45ce302fd4ffa7f29916baf3c7ce36ef",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "pyjuice",
+      "path": "softwareworkload/upstream/pyjuice",
+      "url": "https://github.com/Tractables/pyjuice.git",
+      "purpose": "Probabilistic circuit GPU baseline",
+      "commit": "00e8e770ef79538514331ccb965a34ed530f1da1",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "pyjuice-benchmarks",
+      "path": "softwareworkload/upstream/pyjuice-benchmarks",
+      "url": "https://github.com/liuanji/pyjuice-benchmarks.git",
+      "purpose": "Probabilistic circuit benchmark configurations",
+      "commit": "56c5db0268d58ecf3a73f54f37b3fec468dc73b1",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "klay",
+      "path": "softwareworkload/upstream/klay",
+      "url": "https://github.com/ML-KULeuven/klay.git",
+      "purpose": "Arithmetic circuit layer baseline",
+      "commit": "d5c2907669dc2349e5a0e545b546d7779c84c6c7",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "pytorch-struct",
+      "path": "softwareworkload/upstream/pytorch-struct",
+      "url": "https://github.com/harvardnlp/pytorch-struct.git",
+      "purpose": "Semiring chain and parsing dynamic programs",
+      "commit": "7146de5659ff17ad7be53023c025ffd099866412",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "Ctrl-G",
+      "path": "softwareworkload/upstream/Ctrl-G",
+      "url": "https://github.com/joshuacnf/Ctrl-G.git",
+      "purpose": "HMM x DFA constrained decoding",
+      "commit": "379463249c368739f81c46c1e71b8673bfcedf7c",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "GraphBLAS",
+      "path": "softwareworkload/upstream/GraphBLAS",
+      "url": "https://github.com/DrTimothyAldenDavis/GraphBLAS.git",
+      "purpose": "CPU sparse semiring linear algebra",
+      "commit": "afbe9aaefe5df7632ca82b478d65d0f6c1e14db0",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "LAGraph",
+      "path": "softwareworkload/upstream/LAGraph",
+      "url": "https://github.com/GraphBLAS/LAGraph.git",
+      "purpose": "Graph algorithms over GraphBLAS",
+      "commit": "7543de1f310371c540c23ff5da82705aa4e94ea0",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "graphblast",
+      "path": "softwareworkload/upstream/graphblast",
+      "url": "https://github.com/gunrock/graphblast.git",
+      "purpose": "GPU GraphBLAS baseline",
+      "commit": "f56f9677276c574c6fe4f1cc104d51f13717e165",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [
+        "d622848f9fb62f13e5e064e1deb43b6bcbb12bad ext/cub (d622848)",
+        " 9e491c383e935c2cbc0279350640dad3febb8b9d ext/moderngpu (heads/master)"
+      ],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "gunrock",
+      "path": "softwareworkload/upstream/gunrock",
+      "url": "https://github.com/gunrock/gunrock.git",
+      "purpose": "GPU graph traversal and frontier baseline",
+      "commit": "748f79e66cc26762cd3f99422b028e742a737bde",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "cugraph",
+      "path": "softwareworkload/upstream/cugraph",
+      "url": "https://github.com/rapidsai/cugraph.git",
+      "purpose": "GPU graph baseline used by existing profiling kit",
+      "commit": "8443253f867df7b19126e46c34d8f4c94895d034",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "kissat",
+      "path": "softwareworkload/upstream/kissat",
+      "url": "https://github.com/arminbiere/kissat.git",
+      "purpose": "SAT and watched-literal BCP reference",
+      "commit": "8af8e56f174b778aef3aa45af9f739b2a5f492c2",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "cadical",
+      "path": "softwareworkload/upstream/cadical",
+      "url": "https://github.com/arminbiere/cadical.git",
+      "purpose": "SAT and watched-literal BCP comparison",
+      "commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "downward",
+      "path": "softwareworkload/upstream/downward",
+      "url": "https://github.com/aibasel/downward.git",
+      "purpose": "Planning heuristic and search baseline",
+      "commit": "9b81c7e422fdf7be9f73b96e9a7a969c483dd5d4",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "downward-benchmarks",
+      "path": "softwareworkload/upstream/downward-benchmarks",
+      "url": "https://github.com/aibasel/downward-benchmarks.git",
+      "purpose": "PDDL planning benchmark inputs",
+      "commit": "e21d49c2cb61d147a46c5966f2581bf6fd422b9f",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "NBFNet",
+      "path": "softwareworkload/upstream/NBFNet",
+      "url": "https://github.com/DeepGraphLearning/NBFNet.git",
+      "purpose": "Knowledge-graph Bellman-Ford neural reasoning",
+      "commit": "eb49ff2770d1629edb04e96c9a6d7fee809097f2",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "torchhd",
+      "path": "softwareworkload/upstream/torchhd",
+      "url": "https://github.com/hyperdimensional-computing/torchhd.git",
+      "purpose": "Vector symbolic cleanup and HDC workloads",
+      "commit": "9d73e1bd1f169d718340dfd40aa1aa976faa3851",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "pgmpy",
+      "path": "softwareworkload/upstream/pgmpy",
+      "url": "https://github.com/pgmpy/pgmpy.git",
+      "purpose": "Bayesian network inference baseline",
+      "commit": "fa42ee20e09488b10f9f556abed8ad415658ed05",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "transformers",
+      "path": "softwareworkload/upstream/transformers",
+      "url": "https://github.com/huggingface/transformers.git",
+      "purpose": "Beam search software implementation",
+      "commit": "96331a9f93b72697f160a958d2883d4b49a56739",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "xgrammar",
+      "path": "softwareworkload/upstream/xgrammar",
+      "url": "https://github.com/mlc-ai/xgrammar.git",
+      "purpose": "Grammar-constrained decoding comparison and coverage audit",
+      "commit": "4221346f3d26b8306b46de19cb40c8a525c4871c",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [
+        "6689d14c203eed390ae7bb64f56a983cfd7dff9c 3rdparty/cpptrace (6689d14)",
+        " bbd2f4d32427e548797929af08cfe2a9cbb3cf12 3rdparty/dlpack (bbd2f4d)",
+        " df1544bcee0c7ce35cd5ea0b3eb8cc81855a4140 3rdparty/googletest (df1544b)"
+      ],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "sam",
+      "path": "systolicarch/upstream/sam",
+      "url": "https://github.com/weiya711/sam.git",
+      "purpose": "Sparse streaming simulator and SAM-to-Onyx binding",
+      "commit": "6e477d142668fa0a769235365f5c77a049440297",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [
+        "6d50251d8e6ed6b7f6eb1e12c558d2808fb4ddaa compiler/benchmark (6d50251)",
+        " cf8f007bab940527c48fb0479236b3928b32c1b0 compiler/taco (cf8f007)",
+        " 8de7772cc72daca8e947b79b83fea46214931604 compiler/taco/python_bindings/pybind11 (8de7772)",
+        " dcaec03e32e0b152f8ef9cf14b75296cf5caeaff compiler/taco/test/bats (dcaec03)"
+      ],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "SCALE-Sim",
+      "path": "systolicarch/upstream/SCALE-Sim",
+      "url": "https://github.com/scalesim-project/SCALE-Sim.git",
+      "purpose": "Dense systolic cycle/traffic simulator",
+      "commit": "9f98c4371055a54c75209c2e02b640b897550532",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [
+        "214f635845214adf030367939655d172ef0fed5f submodules/ramulator (v.0)"
+      ],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "DAG_Processor",
+      "path": "systolicarch/upstream/DAG_Processor",
+      "url": "https://github.com/nimish15shah/DAG_Processor.git",
+      "purpose": "DPU-v2 DAG compiler, input DAGs and SystemVerilog simulation",
+      "commit": "cefe56ec57a9794e1ae2263f2998da65f1e93340",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "GraphLily",
+      "path": "systolicarch/upstream/GraphLily",
+      "url": "https://github.com/cornell-zhang/GraphLily.git",
+      "purpose": "HBM FPGA semiring overlay source and middleware",
+      "commit": "f3438f9d8de0e5fe47b4348a2b5b2bb6c91c76ce",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "accel-sim-framework",
+      "path": "systolicarch/upstream/accel-sim-framework",
+      "url": "https://github.com/accel-sim/accel-sim-framework.git",
+      "purpose": "GPU simulation framework; requires matching workload traces",
+      "commit": "d930ad6d02c09bb56867132583735aba0389cff4",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "ramulator2",
+      "path": "systolicarch/upstream/ramulator2",
+      "url": "https://github.com/CMU-SAFARI/ramulator2.git",
+      "purpose": "Detailed DRAM model for memory bottleneck validation",
+      "commit": "72427a1bba3771564c4fb0e494ba02242fd1eaa7",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "name": "stonne",
+      "path": "systolicarch/upstream/stonne",
+      "url": "https://github.com/stonne-simulator/stonne.git",
+      "purpose": "Dense/sparse accelerator simulator and MAERI-style networks",
+      "commit": "22634b8b7668c2691bc2df8f612232d90839df20",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    }
+  ],
+  "dependency_checkouts": [
+    {
+      "path": "softwareworkload/upstream/Lobster/core/src/gpu_runtime/libsclgpu/cccl",
+      "url": "https://github.com/P-bibs/cccl.git",
+      "commit": "5a87e5d5706efa2d59e8d8281c89f093cd48280f",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "softwareworkload/upstream/graphblast/ext/cub",
+      "url": "https://ctcyang@github.com/NVlabs/cub.git",
+      "commit": "d622848f9fb62f13e5e064e1deb43b6bcbb12bad",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "softwareworkload/upstream/graphblast/ext/moderngpu",
+      "url": "https://ctcyang@github.com/ctcyang/moderngpu.git",
+      "commit": "9e491c383e935c2cbc0279350640dad3febb8b9d",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "softwareworkload/upstream/xgrammar/3rdparty/cpptrace",
+      "url": "https://github.com/jeremy-rifkin/cpptrace.git",
+      "commit": "6689d14c203eed390ae7bb64f56a983cfd7dff9c",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "softwareworkload/upstream/xgrammar/3rdparty/dlpack",
+      "url": "https://github.com/dmlc/dlpack.git",
+      "commit": "bbd2f4d32427e548797929af08cfe2a9cbb3cf12",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "softwareworkload/upstream/xgrammar/3rdparty/googletest",
+      "url": "https://github.com/google/googletest.git",
+      "commit": "df1544bcee0c7ce35cd5ea0b3eb8cc81855a4140",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "systolicarch/upstream/sam/compiler/benchmark",
+      "url": "https://github.com/google/benchmark.git",
+      "commit": "6d50251d8e6ed6b7f6eb1e12c558d2808fb4ddaa",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "systolicarch/upstream/sam/compiler/benchmark/googletest",
+      "url": "https://github.com/google/googletest.git",
+      "commit": "4267679b6887f349f17b01ccd70c9e3483689b25",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "systolicarch/upstream/sam/compiler/taco",
+      "url": "https://github.com/weiya711/taco/",
+      "commit": "cf8f007bab940527c48fb0479236b3928b32c1b0",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [
+        "8de7772cc72daca8e947b79b83fea46214931604 python_bindings/pybind11 (8de7772)",
+        " dcaec03e32e0b152f8ef9cf14b75296cf5caeaff test/bats (dcaec03)"
+      ],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "systolicarch/upstream/sam/compiler/taco/python_bindings/pybind11",
+      "url": "https://github.com/pybind/pybind11",
+      "commit": "8de7772cc72daca8e947b79b83fea46214931604",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "systolicarch/upstream/sam/compiler/taco/test/bats",
+      "url": "https://github.com/bats-core/bats-core",
+      "commit": "dcaec03e32e0b152f8ef9cf14b75296cf5caeaff",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "systolicarch/upstream/SCALE-Sim/submodules/ramulator",
+      "url": "https://github.com/CMU-SAFARI/ramulator.git",
+      "commit": "214f635845214adf030367939655d172ef0fed5f",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "systolicarch/upstream/accel-sim-framework/gpu-simulator/gpgpu-sim",
+      "url": "https://github.com/accel-sim/gpgpu-sim_distribution.git",
+      "commit": "91880c53383d5a6a6742bfb1be2c5f34e39c7871",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "systolicarch/upstream/accel-sim-framework/gpu-simulator/extern/pybind11",
+      "url": "https://github.com/pybind/pybind11.git",
+      "commit": "bf21a6dfe775edbd53dce32057cf907fe6e6c064",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "systolicarch/upstream/ramulator2/ext/yaml-cpp",
+      "url": "https://github.com/jbeder/yaml-cpp.git",
+      "commit": "56e3bb550c91fd7005566f19c079cb7a503223cf",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "systolicarch/upstream/ramulator2/ext/fmt",
+      "url": "https://github.com/fmtlib/fmt.git",
+      "commit": "e69e5f977d458f2650bb346dadf2ad30c5320281",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "systolicarch/upstream/ramulator2/ext/nanobind",
+      "url": "https://github.com/wjakob/nanobind.git",
+      "commit": "0f9ce749b257fdfe701edb3cf6f7027ba029434a",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [
+        "188c45569cc2a5dd768077c193830b51d33a5020 ext/robin_map (188c455)"
+      ],
+      "connectivity_check": "PASS"
+    },
+    {
+      "path": "systolicarch/upstream/ramulator2/ext/nanobind/ext/robin_map",
+      "url": "https://github.com/Tessil/robin-map",
+      "commit": "188c45569cc2a5dd768077c193830b51d33a5020",
+      "shallow": true,
+      "tracked_diff": "",
+      "submodules": [],
+      "connectivity_check": "PASS"
+    }
+  ]
+}

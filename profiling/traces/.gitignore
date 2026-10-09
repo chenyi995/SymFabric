@@ -1,0 +1,5 @@
+# Run products (nsys-rep, sqlite, perf.data, ncu.csv, logs) never enter git (aimd rules section 21).
+# Only this file and .gitkeep are tracked; the index of a run is the row it appends to ../results/<workload>.csv.
+*
+!.gitignore
+!.gitkeep

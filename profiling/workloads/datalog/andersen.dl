@@ -1,0 +1,15 @@
+// Field-insensitive Andersen points-to (inclusion-based); the core rule shape of Doop-style program analysis
+.decl alloc(v:number, h:number)   // v = new h
+.decl assign(v:number, w:number)  // v = w
+.decl load(v:number, w:number)    // v = *w
+.decl store(v:number, w:number)   // *v = w
+.input alloc
+.input assign
+.input load
+.input store
+.decl pt(v:number, h:number)
+pt(v, h) :- alloc(v, h).
+pt(v, h) :- assign(v, w), pt(w, h).
+pt(v, h) :- load(v, w), pt(w, x), pt(x, h).
+pt(x, h) :- store(v, w), pt(v, x), pt(w, h).
+.output pt

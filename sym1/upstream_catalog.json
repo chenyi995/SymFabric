@@ -1,0 +1,205 @@
+{
+  "date": "2026-09-26",
+  "scope": "sym1 baseline source acquisition; cloning does not imply benchmark reproduction",
+  "clone_mode": "depth 1 default branch; exact local commits recorded by inventory script",
+  "repositories": [
+    {
+      "name": "gapbs",
+      "path": "softwareworkload/upstream/gapbs",
+      "url": "https://github.com/sbeamer/gapbs.git",
+      "purpose": "CPU graph BFS, SSSP and triangle baseline"
+    },
+    {
+      "name": "souffle",
+      "path": "softwareworkload/upstream/souffle",
+      "url": "https://github.com/souffle-lang/souffle.git",
+      "purpose": "CPU Datalog and semi-naive fixpoint"
+    },
+    {
+      "name": "gdlog",
+      "path": "softwareworkload/upstream/gdlog",
+      "url": "https://github.com/harp-lab/gdlog.git",
+      "purpose": "GPU Datalog runtime and benchmark programs"
+    },
+    {
+      "name": "vflog",
+      "path": "softwareworkload/upstream/vflog",
+      "url": "https://github.com/harp-lab/vflog.git",
+      "purpose": "Columnar GPU Datalog baseline"
+    },
+    {
+      "name": "srdatalog-python",
+      "path": "softwareworkload/upstream/srdatalog-python",
+      "url": "https://github.com/harp-lab/srdatalog-python.git",
+      "purpose": "Author-group SRDatalog frontend/runtime; paper artifact revision requires alignment"
+    },
+    {
+      "name": "Lobster",
+      "path": "softwareworkload/upstream/Lobster",
+      "url": "https://github.com/P-bibs/Lobster.git",
+      "purpose": "GPU provenance-semiring Datalog"
+    },
+    {
+      "name": "scallop",
+      "path": "softwareworkload/upstream/scallop",
+      "url": "https://github.com/scallop-lang/scallop.git",
+      "purpose": "Neurosymbolic Datalog workloads and reference implementation"
+    },
+    {
+      "name": "pyjuice",
+      "path": "softwareworkload/upstream/pyjuice",
+      "url": "https://github.com/Tractables/pyjuice.git",
+      "purpose": "Probabilistic circuit GPU baseline"
+    },
+    {
+      "name": "pyjuice-benchmarks",
+      "path": "softwareworkload/upstream/pyjuice-benchmarks",
+      "url": "https://github.com/liuanji/pyjuice-benchmarks.git",
+      "purpose": "Probabilistic circuit benchmark configurations"
+    },
+    {
+      "name": "klay",
+      "path": "softwareworkload/upstream/klay",
+      "url": "https://github.com/ML-KULeuven/klay.git",
+      "purpose": "Arithmetic circuit layer baseline"
+    },
+    {
+      "name": "pytorch-struct",
+      "path": "softwareworkload/upstream/pytorch-struct",
+      "url": "https://github.com/harvardnlp/pytorch-struct.git",
+      "purpose": "Semiring chain and parsing dynamic programs"
+    },
+    {
+      "name": "Ctrl-G",
+      "path": "softwareworkload/upstream/Ctrl-G",
+      "url": "https://github.com/joshuacnf/Ctrl-G.git",
+      "purpose": "HMM x DFA constrained decoding"
+    },
+    {
+      "name": "GraphBLAS",
+      "path": "softwareworkload/upstream/GraphBLAS",
+      "url": "https://github.com/DrTimothyAldenDavis/GraphBLAS.git",
+      "purpose": "CPU sparse semiring linear algebra"
+    },
+    {
+      "name": "LAGraph",
+      "path": "softwareworkload/upstream/LAGraph",
+      "url": "https://github.com/GraphBLAS/LAGraph.git",
+      "purpose": "Graph algorithms over GraphBLAS"
+    },
+    {
+      "name": "graphblast",
+      "path": "softwareworkload/upstream/graphblast",
+      "url": "https://github.com/gunrock/graphblast.git",
+      "purpose": "GPU GraphBLAS baseline"
+    },
+    {
+      "name": "gunrock",
+      "path": "softwareworkload/upstream/gunrock",
+      "url": "https://github.com/gunrock/gunrock.git",
+      "purpose": "GPU graph traversal and frontier baseline"
+    },
+    {
+      "name": "cugraph",
+      "path": "softwareworkload/upstream/cugraph",
+      "url": "https://github.com/rapidsai/cugraph.git",
+      "purpose": "GPU graph baseline used by existing profiling kit"
+    },
+    {
+      "name": "kissat",
+      "path": "softwareworkload/upstream/kissat",
+      "url": "https://github.com/arminbiere/kissat.git",
+      "purpose": "SAT and watched-literal BCP reference"
+    },
+    {
+      "name": "cadical",
+      "path": "softwareworkload/upstream/cadical",
+      "url": "https://github.com/arminbiere/cadical.git",
+      "purpose": "SAT and watched-literal BCP comparison"
+    },
+    {
+      "name": "downward",
+      "path": "softwareworkload/upstream/downward",
+      "url": "https://github.com/aibasel/downward.git",
+      "purpose": "Planning heuristic and search baseline"
+    },
+    {
+      "name": "downward-benchmarks",
+      "path": "softwareworkload/upstream/downward-benchmarks",
+      "url": "https://github.com/aibasel/downward-benchmarks.git",
+      "purpose": "PDDL planning benchmark inputs"
+    },
+    {
+      "name": "NBFNet",
+      "path": "softwareworkload/upstream/NBFNet",
+      "url": "https://github.com/DeepGraphLearning/NBFNet.git",
+      "purpose": "Knowledge-graph Bellman-Ford neural reasoning"
+    },
+    {
+      "name": "torchhd",
+      "path": "softwareworkload/upstream/torchhd",
+      "url": "https://github.com/hyperdimensional-computing/torchhd.git",
+      "purpose": "Vector symbolic cleanup and HDC workloads"
+    },
+    {
+      "name": "pgmpy",
+      "path": "softwareworkload/upstream/pgmpy",
+      "url": "https://github.com/pgmpy/pgmpy.git",
+      "purpose": "Bayesian network inference baseline"
+    },
+    {
+      "name": "transformers",
+      "path": "softwareworkload/upstream/transformers",
+      "url": "https://github.com/huggingface/transformers.git",
+      "purpose": "Beam search software implementation"
+    },
+    {
+      "name": "xgrammar",
+      "path": "softwareworkload/upstream/xgrammar",
+      "url": "https://github.com/mlc-ai/xgrammar.git",
+      "purpose": "Grammar-constrained decoding comparison and coverage audit"
+    },
+    {
+      "name": "sam",
+      "path": "systolicarch/upstream/sam",
+      "url": "https://github.com/weiya711/sam.git",
+      "purpose": "Sparse streaming simulator and SAM-to-Onyx binding"
+    },
+    {
+      "name": "SCALE-Sim",
+      "path": "systolicarch/upstream/SCALE-Sim",
+      "url": "https://github.com/scalesim-project/SCALE-Sim.git",
+      "purpose": "Dense systolic cycle/traffic simulator"
+    },
+    {
+      "name": "DAG_Processor",
+      "path": "systolicarch/upstream/DAG_Processor",
+      "url": "https://github.com/nimish15shah/DAG_Processor.git",
+      "purpose": "DPU-v2 DAG compiler, input DAGs and SystemVerilog simulation"
+    },
+    {
+      "name": "GraphLily",
+      "path": "systolicarch/upstream/GraphLily",
+      "url": "https://github.com/cornell-zhang/GraphLily.git",
+      "purpose": "HBM FPGA semiring overlay source and middleware"
+    },
+    {
+      "name": "accel-sim-framework",
+      "path": "systolicarch/upstream/accel-sim-framework",
+      "url": "https://github.com/accel-sim/accel-sim-framework.git",
+      "purpose": "GPU simulation framework; requires matching workload traces"
+    },
+    {
+      "name": "ramulator2",
+      "path": "systolicarch/upstream/ramulator2",
+      "url": "https://github.com/CMU-SAFARI/ramulator2.git",
+      "purpose": "Detailed DRAM model for memory bottleneck validation"
+    },
+    {
+      "name": "stonne",
+      "path": "systolicarch/upstream/stonne",
+      "url": "https://github.com/stonne-simulator/stonne.git",
+      "purpose": "Dense/sparse accelerator simulator and MAERI-style networks"
+    }
+  ]
+}

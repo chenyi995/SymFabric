@@ -1,0 +1,7 @@
+// Transitive closure; Souffle evaluates it semi-naively: delta_path' = (delta_path JOIN edge) minus path
+.decl edge(x:number, y:number)
+.input edge
+.decl path(x:number, y:number)
+path(x, y) :- edge(x, y).
+path(x, z) :- path(x, y), edge(y, z).
+.output path
