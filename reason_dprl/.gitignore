@@ -1,0 +1,11 @@
+# Third-party sources live once in the repository's ignored upstream stores.
+results/
+traces/
+data/
+checkpoints/
+build/
+.venv/
+__pycache__/
+# An actual private REASON implementation must be attached explicitly.
+simulators/reason
+reason.local.json

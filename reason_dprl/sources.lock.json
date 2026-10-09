@@ -1,0 +1,170 @@
+{
+  "recorded_at_utc": "2026-10-09T06:40:51.991885+00:00",
+  "provenance": "Inspected local Git revisions, re-read after writing; source availability only",
+  "sources": [
+    {
+      "name": "DPrL-AAAI",
+      "checkout": "softwareworkload/upstream/DPrL-AAAI",
+      "url": "https://github.com/DeepProofLog/DPrL-AAAI.git",
+      "commit": "cfc66233c7aca3677cfb4ae74a71fdf9559ed89c",
+      "dependencies": []
+    },
+    {
+      "name": "accel-sim-framework",
+      "checkout": "systolicarch/upstream/accel-sim-framework",
+      "url": "https://github.com/accel-sim/accel-sim-framework.git",
+      "commit": "d930ad6d02c09bb56867132583735aba0389cff4",
+      "dependencies": [
+        {
+          "checkout": "systolicarch/upstream/accel-sim-framework/gpu-simulator/gpgpu-sim",
+          "url": "https://github.com/accel-sim/gpgpu-sim_distribution.git",
+          "commit": "91880c53383d5a6a6742bfb1be2c5f34e39c7871"
+        },
+        {
+          "checkout": "systolicarch/upstream/accel-sim-framework/gpu-simulator/extern/pybind11",
+          "url": "https://github.com/pybind/pybind11.git",
+          "commit": "bf21a6dfe775edbd53dce32057cf907fe6e6c064"
+        }
+      ]
+    },
+    {
+      "name": "DAG_Processor",
+      "checkout": "systolicarch/upstream/DAG_Processor",
+      "url": "https://github.com/nimish15shah/DAG_Processor.git",
+      "commit": "cefe56ec57a9794e1ae2263f2998da65f1e93340",
+      "dependencies": []
+    },
+    {
+      "name": "sam",
+      "checkout": "systolicarch/upstream/sam",
+      "url": "https://github.com/weiya711/sam.git",
+      "commit": "6e477d142668fa0a769235365f5c77a049440297",
+      "dependencies": [
+        {
+          "checkout": "systolicarch/upstream/sam/compiler/benchmark",
+          "url": "https://github.com/google/benchmark.git",
+          "commit": "6d50251d8e6ed6b7f6eb1e12c558d2808fb4ddaa"
+        },
+        {
+          "checkout": "systolicarch/upstream/sam/compiler/benchmark/googletest",
+          "url": "https://github.com/google/googletest.git",
+          "commit": "4267679b6887f349f17b01ccd70c9e3483689b25"
+        },
+        {
+          "checkout": "systolicarch/upstream/sam/compiler/taco",
+          "url": "https://github.com/weiya711/taco/",
+          "commit": "cf8f007bab940527c48fb0479236b3928b32c1b0"
+        },
+        {
+          "checkout": "systolicarch/upstream/sam/compiler/taco/python_bindings/pybind11",
+          "url": "https://github.com/pybind/pybind11",
+          "commit": "8de7772cc72daca8e947b79b83fea46214931604"
+        },
+        {
+          "checkout": "systolicarch/upstream/sam/compiler/taco/test/bats",
+          "url": "https://github.com/bats-core/bats-core",
+          "commit": "dcaec03e32e0b152f8ef9cf14b75296cf5caeaff"
+        }
+      ]
+    },
+    {
+      "name": "SCALE-Sim",
+      "checkout": "systolicarch/upstream/SCALE-Sim",
+      "url": "https://github.com/scalesim-project/SCALE-Sim.git",
+      "commit": "9f98c4371055a54c75209c2e02b640b897550532",
+      "dependencies": [
+        {
+          "checkout": "systolicarch/upstream/SCALE-Sim/submodules/ramulator",
+          "url": "https://github.com/CMU-SAFARI/ramulator.git",
+          "commit": "214f635845214adf030367939655d172ef0fed5f"
+        }
+      ]
+    },
+    {
+      "name": "stonne",
+      "checkout": "systolicarch/upstream/stonne",
+      "url": "https://github.com/stonne-simulator/stonne.git",
+      "commit": "22634b8b7668c2691bc2df8f612232d90839df20",
+      "dependencies": []
+    },
+    {
+      "name": "ramulator2",
+      "checkout": "systolicarch/upstream/ramulator2",
+      "url": "https://github.com/CMU-SAFARI/ramulator2.git",
+      "commit": "72427a1bba3771564c4fb0e494ba02242fd1eaa7",
+      "dependencies": [
+        {
+          "checkout": "systolicarch/upstream/ramulator2/ext/yaml-cpp",
+          "url": "https://github.com/jbeder/yaml-cpp.git",
+          "commit": "56e3bb550c91fd7005566f19c079cb7a503223cf"
+        },
+        {
+          "checkout": "systolicarch/upstream/ramulator2/ext/fmt",
+          "url": "https://github.com/fmtlib/fmt.git",
+          "commit": "e69e5f977d458f2650bb346dadf2ad30c5320281"
+        },
+        {
+          "checkout": "systolicarch/upstream/ramulator2/ext/nanobind",
+          "url": "https://github.com/wjakob/nanobind.git",
+          "commit": "0f9ce749b257fdfe701edb3cf6f7027ba029434a"
+        },
+        {
+          "checkout": "systolicarch/upstream/ramulator2/ext/nanobind/ext/robin_map",
+          "url": "https://github.com/Tessil/robin-map",
+          "commit": "188c45569cc2a5dd768077c193830b51d33a5020"
+        }
+      ]
+    },
+    {
+      "name": "GraphLily",
+      "checkout": "systolicarch/upstream/GraphLily",
+      "url": "https://github.com/cornell-zhang/GraphLily.git",
+      "commit": "f3438f9d8de0e5fe47b4348a2b5b2bb6c91c76ce",
+      "dependencies": []
+    }
+  ],
+  "links": [
+    {
+      "entry": "workloads/dprl",
+      "checkout": "softwareworkload/upstream/DPrL-AAAI"
+    },
+    {
+      "entry": "simulators/accel-sim",
+      "checkout": "systolicarch/upstream/accel-sim-framework"
+    },
+    {
+      "entry": "simulators/dpu-v2",
+      "checkout": "systolicarch/upstream/DAG_Processor"
+    },
+    {
+      "entry": "simulators/sam",
+      "checkout": "systolicarch/upstream/sam"
+    },
+    {
+      "entry": "simulators/scale-sim",
+      "checkout": "systolicarch/upstream/SCALE-Sim"
+    },
+    {
+      "entry": "simulators/stonne",
+      "checkout": "systolicarch/upstream/stonne"
+    },
+    {
+      "entry": "simulators/ramulator2",
+      "checkout": "systolicarch/upstream/ramulator2"
+    },
+    {
+      "entry": "simulators/graphlily",
+      "checkout": "systolicarch/upstream/GraphLily"
+    },
+    {
+      "entry": "simulators/gpgpu-sim",
+      "checkout": "systolicarch/upstream/accel-sim-framework/gpu-simulator/gpgpu-sim"
+    }
+  ],
+  "unavailable": [
+    {
+      "name": "REASON",
+      "status": "No REASON-specific compiler and simulator located in this checkout"
+    }
+  ]
+}
