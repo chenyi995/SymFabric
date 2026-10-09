@@ -6,6 +6,11 @@ the corrected research question and [proposal/PRIOR_ART.md](proposal/PRIOR_ART.m
 for overlap with CogSys/CoCoSys. The literature's broad 36-paper list is not a
 count of DPrL-equivalent dynamic workloads.
 
+For the subsequent binding/state hypothesis tests and the faster GPU adapter,
+read [proposal/DYNAMIC_REPRODUCE.md](proposal/DYNAMIC_REPRODUCE.md). That guide
+adds the exact descriptor-stage experiment, CTP/DPLA* probes, and a separate
+artifact bundle; it does not replace the frozen baseline bundle below.
+
 ## Same-server quick path
 
 The login host has no usable GPU. Submit to Slurm `athena/node2`; the measured

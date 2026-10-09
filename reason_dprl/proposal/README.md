@@ -2,14 +2,23 @@
 
 Research proposal and GPU baseline investigation, 2026-10-09.
 
-**Recommendation:** first test whether binding-dependent successor construction
-recurs across closely related logic provers and whether a compact state-update
-representation improves an indexed GPU baseline. A hardware extension is a
-conditional next step. Generic neural/symbolic heterogeneity, queues, caching,
+**Recommendation:** continue GPU runtime optimization and profile a second
+application with binding-dependent successor construction before selecting a
+hardware extension. The follow-up below tests an exact GPU representation
+change and weakens the immediate hardware case. Generic neural/symbolic heterogeneity, queues, caching,
 and interleaving overlap with CogSys/CoCoSys and are not sufficient novelty.
 The [focused literature screen](LITERATURE.md) and [prior-art audit](PRIOR_ART.md)
 replace the earlier broad framing. The available evidence proves neither that
 GPUs cannot solve this problem nor that the proposed mechanism is new.
+
+**Follow-up verification:** [DYNAMIC_VALIDATION.md](DYNAMIC_VALIDATION.md)
+implements exact delayed fact-state materialization on the GPU. It improves
+the previous best Family/WN18RR configurations by another **1.50x / 2.14x**,
+to **9.926 / 11.457 ms** per batch. DPLA* confirms related binding-dependent
+semantics, but neither it nor the CTP probe establishes a second instance of
+the measured DPrL bottleneck. Direct parent-atom reuse is only **0.574% / 1.079%**
+on the recorded traces. The current recommendation is GPU runtime work and
+further workload validation; a dynamic REASON extension is not yet justified.
 
 For frozen inputs, Slurm commands, artifact recovery, and handoff, start with
 [REPRODUCE.md](../REPRODUCE.md).
@@ -117,7 +126,8 @@ Three disjoint batches per dataset are evaluated. The checkpoints are short
 profiling checkpoints, **not reproductions of the paper's converged accuracy**.
 Their identity is held fixed throughout each comparison.
 
-The [optimized measurements and profiling report](GPU_RESULTS.md) record the
+The first-stage [optimized measurements and profiling report](GPU_RESULTS.md),
+before the follow-up descriptor experiment, records the
 following complete batch latencies. Values are measured means of three batch
 medians, with 20 repetitions for each of the three disjoint batches; speedups
 are derived ratios.
@@ -172,10 +182,11 @@ unknown next action with zero dependency cost. Conversely, enough concurrent
 queries may make a GPU-only runtime highly efficient. Evaluate low-latency and
 high-throughput regimes separately.
 
-Further GPU work remains possible, especially argument-indexed candidate
-generation and a persistent execution loop without host `nonzero` shape
-synchronization. The present optimized implementation is a substantially
-stronger baseline, not a measured GPU performance ceiling. An architecture
+The follow-up now tests argument indexing and delayed materialization; the
+latter helps, while the extra index does not improve the tested latency.
+Further GPU work remains possible, especially a persistent execution loop
+without host `nonzero` shape synchronization. The present implementation is a
+substantially stronger baseline, not a measured GPU performance ceiling. An architecture
 paper must compare against these mechanisms, including equivalent software
 work reduction.
 
@@ -245,13 +256,16 @@ approximate pruning policy must be evaluated separately at matched quality.
 
 ## 6. Experiments that can support or reject the proposal
 
-1. **Complete the software floor.** Add indexed candidate generation and a
-   persistent GPU loop to the supplied optimized baseline. Measure isolated
+1. **Complete the software floor.** Continue from the descriptor/index ablation
+   in [DYNAMIC_VALIDATION.md](DYNAMIC_VALIDATION.md), then test a persistent GPU
+   loop against its simpler fixed-batch winner. Measure isolated
    queries and request streams, batch sizes, proof depths, candidate skew,
    knowledge-base sizes, and state-history capacity. Use converged checkpoints
    for application-level conclusions.
 2. **Test narrow workload transfer.** Retain Family/WN18RR as two datasets of
-   one implementation. Add DPLA* and ACTP before widening to graph traversal or
+   one implementation. DPLA* has now passed a semantic probe, and CTP has an
+   execution probe; neither is a second end-to-end state-cost reproduction.
+   Obtain trained application profiles before widening to graph traversal or
    proof assistants. Measure binding updates, attempted/retained matches,
    materialized bytes, and neural call costs. Keep MNIST as a regular control.
    A fixed action menu or soft matching must not be presented as DPrL's exact
@@ -290,6 +304,8 @@ zero-cost transfers, the hardware proposal should be rejected or narrowed.
   and [CogSys/CoCoSys/REASON overlap audit](PRIOR_ART.md).
 - [36-paper broad-context inventory](papers.tsv); not a target-workload count.
 - [Optimized GPU measurements, correctness and reproduction](GPU_RESULTS.md).
+- [Follow-up hypothesis tests](DYNAMIC_VALIDATION.md) and
+  [their reproduction guide](DYNAMIC_REPRODUCE.md).
 - [Original GPU/REASON experiment report](../RESULTS_20261009.md), with GPU
   measurements separated from uncalibrated hardware estimates.
 - GPU implementations: [online compaction](../scripts/optimize_kg.py),

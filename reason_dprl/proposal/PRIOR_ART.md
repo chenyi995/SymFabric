@@ -78,8 +78,11 @@ predicate/argument indexes, construct only required changes, and reuse atom
 features when their instantiated arguments are unchanged. Commit the selected
 state, preserving candidate order, history semantics, and the proof budget.
 
-This is **our unimplemented hypothesis**. It is more specific than generic
-dynamic scheduling, but its novelty and transferability remain unproven.
+The [follow-up experiment](DYNAMIC_VALIDATION.md) now implements delayed
+fact-state materialization and an optional argument index on the GPU, with
+unchanged outputs. It does not implement a persistent binding-delta store or
+incremental neural features. The complete hypothesis's novelty and
+transferability remain unproven.
 Bindings may alter many atoms; caching may add more traffic than it saves;
 numerical aggregation may change rounding and hence action selection. Charge
 all of these costs. Do not replace DPrL's history hashing with a different
@@ -88,12 +91,17 @@ algorithm or hide a changed candidate set behind an approximate policy.
 Evaluate the same representation first on the GPU, then in a finite-resource
 symbolic state engine. Measure input indexes, context allocation, update reads
 and writes, neural feature materialization, and full completion latency.
-Compare DPrL with the closest screened relatives, beginning with DPLA* and
-ACTP; these are proposed experiments, not completed measurements. Family and
-WN18RR are two datasets of one implementation, not two independent systems.
+The follow-up executes a semantic probe of DPLA*'s official Prolog engine and
+an official CTP GPU execution probe. DPLA* confirms live goal/binding changes;
+CTP uses embedding propagation and largely fixed expansion shapes in the tested
+configurations. Neither establishes DPrL's materialization cost as a shared
+end-to-end bottleneck. ACTP has paper evidence only. Family and WN18RR remain
+two datasets of one implementation, not two independent systems.
 
-The current GPU profile establishes only that the tested DPrL unifier retains
-expensive dense intermediate writes after downstream compaction. If equivalent
-GPU work reduction removes that cost, pursue a software result. Hardware needs
+The initial GPU profile established expensive dense intermediate writes after
+downstream compaction. The follow-up removes much of that work in GPU software,
+improving previous best batch latency by 1.50x / 2.14x. Its very low direct
+parent-atom reuse also weakens the simplest incremental-feature hypothesis.
+Pursue the software result and measure transfer before hardware. Hardware needs
 an additional measured residual and a calibrated benefit; it does not follow
 from membership in NeSy or from our uncalibrated REASON reconstruction.

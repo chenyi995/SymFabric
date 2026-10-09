@@ -61,9 +61,13 @@ is a seventh, foundational entry, kept outside the six: recursive construction
 and symbolic bindings alone do not establish selective online execution, since
 the original method enumerates proof alternatives.
 
-Candidate systems should be implemented and profiled before claiming shared
-hardware needs. Start with DPLA* and ACTP: one tests exact-resolution transfer,
-the other tests learned online reformulation. Published algorithms are evidence
+Candidate systems need application profiles before claiming shared hardware
+needs. The [follow-up verification](DYNAMIC_VALIDATION.md) now runs DPLA*'s
+official successor/heuristic path on synthetic clauses and profiles CTP's
+official GPU execution with frozen random weights. DPLA* confirms related
+binding semantics, while CTP shows a different, largely fixed expansion
+schedule. Neither establishes a second shared end-to-end state-construction
+bottleneck; ACTP remains paper evidence only. Published algorithms are evidence
 for a possible recurring mechanism, not evidence for its fraction of runtime.
 
 ## Exclusions and boundary cases
