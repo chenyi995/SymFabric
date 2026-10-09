@@ -5,6 +5,7 @@ data/
 checkpoints/
 build/
 .venv/
+.cache/
 __pycache__/
 # An actual private REASON implementation must be attached explicitly.
 simulators/reason

@@ -1,0 +1,37 @@
+id	group	first_public_year	name	primary_source	relationship
+P01	proof_methods	2016	Holophrasm	https://arxiv.org/abs/1608.02644	Neural guidance and tactic enumeration over partial Metamath proof trees.
+P02	proof_methods	2019	HOList / DeepHOL	https://arxiv.org/abs/1904.03241	HOL Light proof environment and neural reinforcement learning prover; one paper.
+P03	proof_methods	2020	GPT-f: Generative Language Modeling for Automated Theorem Proving	https://arxiv.org/abs/2009.03393	Language model proposals interleaved with formal Metamath proof search.
+P04	proof_methods	2021	TacticZero	https://arxiv.org/abs/2102.09756	An MDP over HOL4 derivations with tactic selection and backtracking.
+P05	proof_methods	2022	HyperTree Proof Search	https://arxiv.org/abs/2205.11491	Neural policy/value guidance over dynamically expanded proof hypergraphs.
+P06	proof_methods	2022	Thor	https://arxiv.org/abs/2205.10893	Language model proof steps integrated with automated theorem proving hammers.
+P07	proof_methods	2023	LeanDojo / ReProver	https://arxiv.org/abs/2306.15626	Retrieval-augmented tactic generation with an interactive Lean environment.
+P08	proof_methods	2023	COPRA	https://arxiv.org/abs/2310.04353	Stateful backtracking and proof assistant feedback in an LLM agent; ICML 2024.
+P09	proof_methods	2023	LEGO-Prover	https://arxiv.org/abs/2310.00656	Verified reusable lemmas guide modular proof construction; ICLR 2024.
+P10	proof_methods	2024	AlphaGeometry	https://www.nature.com/articles/s41586-023-06747-5	Neural auxiliary constructions interleaved with symbolic geometric deduction.
+P11	proof_methods	2024	DeepSeek-Prover-V1.5	https://arxiv.org/abs/2408.08152	Proof assistant feedback and RMaxTS Monte Carlo tree search.
+P12	proof_methods	2024	InternLM2.5-StepProver	https://arxiv.org/abs/2410.15700	Actor-critic neural proof search and expert iteration.
+P13	proof_methods	2024	MINIMO	https://arxiv.org/abs/2407.00695	Learned policy/value proof search in typed formal theories with intrinsic motivation.
+P14	proof_methods	2025	BFS-Prover	https://arxiv.org/abs/2502.03438	Best-first proof search guided by a language model and Lean feedback.
+P15	proof_methods	2025	AlphaGeometry2	https://arxiv.org/abs/2502.03544	Neural construction proposals and symbolic engines with knowledge-sharing search trees.
+P16	proof_methods	2025	AlphaProof	https://www.nature.com/articles/s41586-025-09833-y	PUCT proof search with neural tactic/value queries and formal state transitions.
+P17	proof_methods	2025	BFS-Prover-V2	https://arxiv.org/abs/2509.06493	Hierarchical planning and multi-agent proof search with a shared proof cache.
+P18	proof_methods	2025	DeepProofLog (DPrL)	https://arxiv.org/abs/2511.08581	Neurally parameterized stochastic logic derivations mapped to MDPs; AAAI 2026 oral.
+A01	adjacent_workloads	2017	DeepPath	https://arxiv.org/abs/1707.06690	Neural reinforcement learning over knowledge graph paths; adjacency rather than unification.
+A02	adjacent_workloads	2017	MINERVA	https://arxiv.org/abs/1711.05851	Query-conditioned knowledge graph traversal with a learned policy; ICLR 2018.
+A03	adjacent_workloads	2021	Policy-Guided Heuristic Search with Guarantees	https://arxiv.org/abs/2103.11505	Learned policy and heuristic control explicit search in combinatorial domains.
+A04	adjacent_workloads	2020	DreamCoder	https://arxiv.org/abs/2006.08381	Neural recognition guides symbolic program search; neural invocation granularity differs.
+A05	adjacent_workloads	2018	Robust Text-to-SQL Generation with Execution-Guided Decoding	https://arxiv.org/abs/1807.03100	Symbolic execution filters generated programs; not first-order proof resolution.
+A06	adjacent_workloads	2025	Valid Text-to-SQL Generation with Unification-based DeepStochLog	https://arxiv.org/abs/2503.13342	Unification grammar constraints interact with a language model during SQL generation.
+C01	controls	2018	DeepProbLog	https://proceedings.neurips.cc/paper/2018/hash/dc5d637ed5e62c36ecb73b654b05ba2a-Abstract.html	Neural probabilistic logic; compiled possible-world inference need not be an online proof-policy loop.
+C02	controls	2021	DeepStochLog	https://arxiv.org/abs/2106.12574	Neural stochastic grammar derivations; tabling and dynamic programming can change runtime structure.
+C03	controls	2023	Scallop	https://arxiv.org/abs/2304.04812	Differentiable Datalog; recursion does not imply a neural invocation after every symbolic step.
+C04	controls	2025	DeepSeek-Prover-V2	https://arxiv.org/abs/2504.21801	Recursive subgoal decomposition in training is insufficient evidence of a fine-grained inference loop.
+S01	systems	2026	REASON	https://arxiv.org/abs/2601.20784	Probabilistic DAG acceleration plus dynamic SAT watched-literal propagation and GPU integration.
+S02	systems	2025	CogSys	https://arxiv.org/abs/2503.01162	Reconfigurable neuro-symbolic processing and workload scheduling; not a demonstrated SLD unifier.
+S03	systems	2022	DPU-v2	https://arxiv.org/abs/2210.13184	Compiled static-connectivity irregular DAG execution on tree processing elements and banked registers.
+S04	systems	2021	Atos	https://arxiv.org/abs/2112.00132	Task-parallel GPU runtime for dynamic irregular workloads; a software counterexample to generic dynamic-queue novelty.
+S05	systems	2026	TreeThink	https://arxiv.org/abs/2607.11258	Asynchronous batched neural proof search with formal prover interfaces; preprint and software counterbaseline.
+S06	systems	2024	Towards Efficient Neuro-Symbolic AI: From Workload Characterization to Hardware Architecture	https://arxiv.org/abs/2409.13153	Cross-platform characterization; heterogeneous control and memory costs depend on the workload family.
+R01	surveys	2025	Neuro-Symbolic AI in 2024: A Systematic Review	https://arxiv.org/abs/2501.05435	167 included papers from 1428 candidates for broad NeSy during 2020-2024; not a DPrL-like workload count.
+R02	surveys	2023	Neuro-Symbolic Reinforcement Learning and Planning: A Survey	https://arxiv.org/abs/2309.01038	Taxonomy of interactions between learning and reasoning; broader than online proof execution.

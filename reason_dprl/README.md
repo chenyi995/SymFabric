@@ -1,8 +1,25 @@
 # Dynamic proof execution with REASON and DeepProofLog
 
+Start with [REPRODUCE.md](REPRODUCE.md) to recover frozen inputs, verify the
+environment, and submit the measured baseline on Slurm. The
+[research proposal](proposal/README.md) now uses a
+[narrow workload screen](proposal/LITERATURE.md) and an explicit
+[CogSys/CoCoSys overlap audit](proposal/PRIOR_ART.md). The old 36-paper inventory
+is broad context, not evidence that all those papers share DPrL's dynamic
+unification. Hardware novelty and necessity remain unproven.
+
+[Optimized GPU measurements](proposal/GPU_RESULTS.md) show 3.08x / 3.87x lower
+latency for Family / WN18RR versus corrected complete-CUDA-Graph controls on the
+tested RTX A5000. These are software gains; the residual includes avoidable
+dense intermediate state writes.
+The Slurm GPU experiment harness and DPU-v2-backed REASON reconstruction are
+documented in [RECONSTRUCTION.md](RECONSTRUCTION.md). They add executable
+measurements and an explicitly uncalibrated accelerator model to the comparison
+design below. Generated run records remain under the ignored `results/` tree.
+
 This project evaluates DeepProofLog (DPrL) on a GPU and on a GPU coupled to
-REASON, then isolates the benefit of extending REASON for dynamic proof
-execution. The research question is whether processing variable candidate sets
+REASON, then investigates whether extending REASON for goal-dependent proof
+state construction provides a benefit. The research question is whether processing variable candidate sets
 and maintaining proof state near the execution units reduces complete query
 latency or increases throughput at matched answer quality.
 
@@ -57,8 +74,9 @@ substitutes for the original REASON baseline.
 | DPrL MNIST addition with dynamic programming | Regular, manageable-state control case for arithmetic and reduction reuse |
 | Concurrent KG queries sharing a knowledge base and policy | State residency, work scheduling, and cross-query data reuse |
 
-Dataset files and trained checkpoints must be acquired and identified separately
-from source code. The public DPrL revision has GPU-vectorized unification,
+KG dataset text files are tracked in the pinned DPrL source. Profiling
+checkpoints and MNIST inputs are in the checksummed artifact bundle; see the
+reproduction guide. The public DPrL revision has GPU-vectorized unification,
 fixed-shape candidate tensors, masks, and compiled execution paths. Compare
 against those paths when supported; a Python-only implementation is not a
 competitive GPU baseline. Candidate padding, state copying, and uneven query
@@ -90,9 +108,10 @@ preserves the links after restoring its upstream directories.
 | [simulators/graphlily](simulators/graphlily) | `systolicarch/upstream/GraphLily` | FPGA semiring source reference, not a CPU timing simulator |
 
 These are alternative supporting tools, not an already integrated simulation
-stack. Source availability does not establish a successful build or calibrated
-execution. An actual REASON-specific compiler and timing backend is still
-required. No `simulators/reason` link is created to an unrelated simulator.
+stack. The added reconstruction imports DPU-v2 graph construction and supplies
+its own arithmetic lowering and timing model; see [RECONSTRUCTION.md](RECONSTRUCTION.md).
+It does not establish calibrated REASON execution or turn DPU-v2 into the
+authors' artifact. No `simulators/reason` link points to an unrelated simulator.
 
 From the SymFabric root:
 
@@ -123,11 +142,14 @@ and new GPU instruction traces. Existing matching traces can be replayed on a
 CPU server. REASON simulation can also run offline on the CPU once its backend
 and workload mapping exist.
 
-The current host's NVIDIA driver query fails. The existing
-[profiling kit](../profiling/README.md) documents its untested GPU execution
-status and requires adaptation to DPrL. This project currently supplies the
-comparison design and source wiring; GPU profiles, a DPrL-to-REASON lowering,
-and a validated REASON performance result remain to be produced.
+The login host has no usable GPU, but Slurm `athena/node2` provides RTX A5000
+GPUs. The project-specific scripts now train frozen profiling checkpoints,
+measure compiled and CUDA Graph inference, capture Nsight profiles, and execute
+the functional arithmetic reconstruction. A stable candidate adapter
+corrects a reproducibility problem found in both Family and WN18RR inference;
+the optimized harness applies it automatically to both datasets.
+See [the run guide](RECONSTRUCTION.md) and [the measured results](RESULTS_20261009.md).
+Accelerator timings remain uncalibrated model estimates; GPU timings are measured.
 
 ## Sources
 

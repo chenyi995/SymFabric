@@ -117,6 +117,19 @@ def read_lock() -> dict:
     return lock
 
 
+def subset(lock: dict, names: list[str]) -> dict:
+    """Select requested source families and their locked dependencies/links."""
+    if not names:
+        return lock
+    known = {source['name'] for source in lock['sources']}
+    if set(names) - known:
+        raise ValueError(f"Unknown sources: {sorted(set(names) - known)}")
+    selected = {**lock, 'sources': [s for s in lock['sources'] if s['name'] in names]}
+    paths = {s['checkout'] for s in all_checkouts(selected)}
+    selected['links'] = [link for link in lock['links'] if link['checkout'] in paths]
+    return selected
+
+
 def link_destination(link: dict) -> tuple[Path, str]:
     entry = PROJECT / link["entry"]
     destination = os.path.relpath(ROOT / link["checkout"], entry.parent)
@@ -193,12 +206,16 @@ def fetch(lock: dict) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=("record", "check", "link", "fetch"))
+    parser.add_argument("--only", action="append", default=[],
+                        help="Limit to a named source family; repeat for multiple sources")
     args = parser.parse_args()
+    if args.command == "record" and args.only:
+        parser.error("record always records the complete source inventory")
     try:
         if args.command == "record":
             record()
         else:
-            lock = read_lock()
+            lock = subset(read_lock(), args.only)
             {"check": check, "link": link_sources, "fetch": fetch}[args.command](lock)
     except (OSError, ValueError, KeyError, subprocess.CalledProcessError) as exc:
         print(f"FAIL: {exc}", file=sys.stderr)
