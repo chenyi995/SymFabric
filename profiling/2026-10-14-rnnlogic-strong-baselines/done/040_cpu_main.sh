@@ -1,0 +1,1 @@
+bash run_pinned.sh run_bench.py --device cpu --cases FB15k-237:272 wn18rr:12 --threads 1 8 16 --batches 32 --splits train valid --variants upstream torch_all native_all native_last native_lru32 --repeats 3 --warmup 1 --gradient-check --output cpu_main.json

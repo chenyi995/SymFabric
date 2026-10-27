@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-14",
+  "scope": "latest fetched upstream revisions; neural Vampire uses mtpa-gnn branch, not global main",
+  "repositories": [
+    {
+      "candidate": "border_basis",
+      "name": "OracleBorderBasis",
+      "origin": "https://github.com/HiroshiKERA/OracleBorderBasis",
+      "commit": "c05d529d80d0080a6e97bc454e636d0672a3d7ba",
+      "commit_date": "2025-05-30T08:00:06+02:00",
+      "branch": "main",
+      "local_patch": null
+    },
+    {
+      "candidate": "contact",
+      "name": "DiffCloth",
+      "origin": "https://github.com/omegaiota/DiffCloth",
+      "commit": "91801521fbeea5d739f822f4334f1a9bbb3ff436",
+      "commit_date": "2024-05-09T23:59:35-04:00",
+      "branch": "main",
+      "local_patch": null
+    },
+    {
+      "candidate": "egraph",
+      "name": "egg",
+      "origin": "https://github.com/egraphs-good/egg",
+      "commit": "73975c9819efb4af2f3c6c1b44fa53f8c5742574",
+      "commit_date": "2026-09-28T14:56:38-07:00",
+      "branch": "main",
+      "local_patch": null
+    },
+    {
+      "candidate": "fol",
+      "name": "materials",
+      "origin": "https://github.com/quickbeam123/deepire2.0-supplementary-materials",
+      "commit": "41b05d8ecfcf5acc6b719820a7027feccbc4884c",
+      "commit_date": "2025-07-24T16:51:17+02:00",
+      "branch": "main",
+      "local_patch": null
+    },
+    {
+      "candidate": "fol",
+      "name": "vampire",
+      "origin": "https://github.com/vprover/vampire",
+      "commit": "d260185c0eeb1634ddc001d7ded426ce6bbb8773",
+      "commit_date": "2026-03-12T12:02:04+01:00",
+      "branch": "mtpa-gnn (detached at fetched HEAD)",
+      "local_patch": [
+        "build_environment.patch",
+        "model_compatibility.patch",
+        "diagnostic.patch",
+        "candidate_forward_timer.hpp"
+      ]
+    },
+    {
+      "candidate": "geometry",
+      "name": "alphageometry2",
+      "origin": "https://github.com/google-deepmind/alphageometry2",
+      "commit": "251e7e16f0bba8ac7c83cdea789fccc195d0c0c7",
+      "commit_date": "2026-01-07T22:35:12+00:00",
+      "branch": "main",
+      "local_patch": "alphageometry2_local.patch"
+    },
+    {
+      "candidate": "kg",
+      "name": "RNNLogic",
+      "origin": "https://github.com/DeepGraphLearning/RNNLogic.git",
+      "commit": "c890b025a14d6294d93222388a449fda8a851009",
+      "commit_date": "2022-10-25T21:14:40+08:00",
+      "branch": "main",
+      "local_patch": null
+    },
+    {
+      "candidate": "planning",
+      "name": "AdvancedIndexing",
+      "origin": "https://github.com/vacancy/AdvancedIndexing-PyTorch",
+      "commit": "59d80aa7c8b7d56f506cab7aa75ffe3d365c5107",
+      "commit_date": "2024-12-26T00:55:45-05:00",
+      "branch": "master",
+      "local_patch": null
+    },
+    {
+      "candidate": "planning",
+      "name": "Jacinle",
+      "origin": "https://github.com/vacancy/Jacinle.git",
+      "commit": "4b4f00dc455185a58748051db9461623357d65b2",
+      "commit_date": "2025-09-29T12:42:14-07:00",
+      "branch": "master",
+      "local_patch": null
+    },
+    {
+      "candidate": "planning",
+      "name": "PDSketch",
+      "origin": "https://github.com/vacancy/PDSketch-Alpha-Release.git",
+      "commit": "1c5ffb9bc9a41b89451e0224091c6cbdfeea29e3",
+      "commit_date": "2023-11-01T13:01:17-04:00",
+      "branch": "main",
+      "local_patch": "PDSketch_local.patch"
+    },
+    {
+      "candidate": "ppl",
+      "name": "UPIX",
+      "origin": "https://github.com/ipa-lab/UPIX",
+      "commit": "8656406efd17f84999e9ac42d8cc2dcd0089f532",
+      "commit_date": "2026-09-07T10:57:25+02:00",
+      "branch": "main",
+      "local_patch": null
+    },
+    {
+      "candidate": "sdd",
+      "name": "deepproblog",
+      "origin": "https://github.com/ML-KULeuven/deepproblog",
+      "commit": "f64181f66a3a789a96a47d7c2d3fae4d56178990",
+      "commit_date": "2026-09-29T16:48:32+02:00",
+      "branch": "master",
+      "local_patch": null
+    }
+  ]
+}

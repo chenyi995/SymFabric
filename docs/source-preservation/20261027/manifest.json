@@ -1,0 +1,1519 @@
+{
+  "purpose": "Preserve existing code before user-authorized local removal.",
+  "original_head": "bce0039151d2e6ded8007caee99b399427221f76",
+  "source_files": [
+    {
+      "path": "profiling/2026-10-14-candidate-tests/.gitignore",
+      "bytes": 215,
+      "sha256": "6c705768f1f0663facc99ba0043604f9f691f46359852c304b3ea67ef430458d"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/border_basis/bench.py",
+      "bytes": 2285,
+      "sha256": "3f923aea58e099784ded504c400eb3cd9fb3e1a0295b11a680b45c5159c692b4"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/contact/profile_hat.py",
+      "bytes": 2536,
+      "sha256": "d4dbc52d70fc7ca616af03885ac670fb88903461150ac76dcb23aaf0fb5e4252"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/egraph/bench.py",
+      "bytes": 1684,
+      "sha256": "63bba5bed32253cdaf0b5c12fc4dfe24c3a8a87e18b0007fc7099d2f13cbe1dd"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/egraph/bench_heavier.py",
+      "bytes": 1684,
+      "sha256": "d818d46729fc6b24ea3bbe7ce0177129e85b935ebb22bf7e7130a9a8cf8e4f82"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/add_diagnostic.py",
+      "bytes": 2192,
+      "sha256": "3c5068ad160e2676eaf03f07455e7c9146b4ea63ebdb6cfab6ffe73c4a247cce"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/bench.py",
+      "bytes": 1494,
+      "sha256": "038c15dc00bb19f681a723b666f007f4b40de185286faed31c26d5e191466e00"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/bench_symbolic.py",
+      "bytes": 1167,
+      "sha256": "b8bae3e84ae379b430914bd699ccb9529055c518cbbc9869c5589df537bb2e95"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/build_environment.patch",
+      "bytes": 2332,
+      "sha256": "2008af0f5097e1d0ea83124bd2c2dd5284219cb0c3b7d17dc0d728dac8903f9f"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/candidate_forward_timer.hpp",
+      "bytes": 1234,
+      "sha256": "71ee051f53709046e7501b3d0e008ce180f0d02b300ae872a1a2351f07a81c3d"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/diagnostic.patch",
+      "bytes": 2079,
+      "sha256": "e4dc6873448fe0566661be97c8e969914f9eab948e3cbac025d3416944163b03"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/fetch_problem.py",
+      "bytes": 922,
+      "sha256": "23fa26e2d16ad6f673d7184094bac005af223403b83364fa605f03896cb7337f"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/latest.Makefile",
+      "bytes": 23437,
+      "sha256": "3a005ae5743cccd3b24e1660b3fd990107cf1adf909047f5da4445dc6ecc75d6"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/model_compatibility.patch",
+      "bytes": 836,
+      "sha256": "396af3fcb6640d5eb277d6886b20f462e0d229a302b984e7bb28d05d4c2eed53"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/tptp/Axioms/CSR006+0.ax",
+      "bytes": 1028741,
+      "sha256": "de6f70cf5aeaeb42f18203213779e1e7b0e954c44196b73ef0353106f7d77cbc"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/tptp/Problems/CSR/CSR188+1.p",
+      "bytes": 1746,
+      "sha256": "487785bca191153af4dea58601a45930d3d880b4aba729f82c481110d403a445"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/tptp/sources.json",
+      "bytes": 194,
+      "sha256": "de6130afa164d16d1cfa1191e8fba57ead94f67efa90a1adba17305bdb7eb7f6"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/vampire_local.patch",
+      "bytes": 2332,
+      "sha256": "2008af0f5097e1d0ea83124bd2c2dd5284219cb0c3b7d17dc0d728dac8903f9f"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/geometry/alphageometry2_local.patch",
+      "bytes": 437,
+      "sha256": "298713e1fed233704570256d71696374836ef0af9a8fd80eff8373fd5567a4d2"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/geometry/bench.py",
+      "bytes": 2029,
+      "sha256": "b74223f60b26d6e1b50da3f1b3c18216b6117d4e1d9c1750a34bf90a5150b1ed"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/geometry/bench_zero_hoist.py",
+      "bytes": 2073,
+      "sha256": "bcdf9b4012ec4ec8ad707eb75ea6df5b1eef58af24b97bced28f1ffd2ac60e91"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/geometry/zero_hoist.patch",
+      "bytes": 437,
+      "sha256": "298713e1fed233704570256d71696374836ef0af9a8fd80eff8373fd5567a4d2"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/kg/bench.py",
+      "bytes": 4909,
+      "sha256": "9ad3786e078bc8bc492c20291ac52bb1f6cb43dcea2c9de73b6f307ba2aca21c"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/kg/diagnostic.py",
+      "bytes": 5400,
+      "sha256": "2d4d485f455f25afa81d51228f073ef8971b10793e2cd76fecc8a68e39d72c13"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/planning/PDSketch_local.patch",
+      "bytes": 615,
+      "sha256": "1b1a7462bdf4491a45c827819a06351b2d7b53f92dc55c4b1974f98bf80a9cfe"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/planning/bench.py",
+      "bytes": 4581,
+      "sha256": "1feda8e42bae785400989ec5909a341f2d6e8b50420179045b161d8a289e0ee1"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/ppl/excluded_synthetic_fixture/bench.py",
+      "bytes": 3942,
+      "sha256": "67c5c696bdb76be5eff646c65be7d9ea1dbcf40945f35376f22e450792231e6d"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/ppl/profile_upix.py",
+      "bytes": 2376,
+      "sha256": "f0ec3d1bf6a2e6b6a2b235a1e5555ca0dee4f55d579b3dcc3cfc7767ebebca28"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/reproduce.txt",
+      "bytes": 3014,
+      "sha256": "0e98fc970e1c2926744fed3376645a2578143f9dcfbd5175b1169f6f2fb72056"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/sdd/bench.py",
+      "bytes": 3097,
+      "sha256": "fb0b68d71eb35faac883edf11d68dc6faa6e399da8ffedbf630c904d1a0d397d"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/sdd/bench_multi.py",
+      "bytes": 2227,
+      "sha256": "26e84674c29d10185d826099fab275fa5d736ecf443bb859f6a629b0dd719276"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/sdd/bench_native.py",
+      "bytes": 2429,
+      "sha256": "eea94b7eb8778e6743461dd86d0c3685ab88a733ed66ba05272dab7d9094e35e"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/sdd/diagnostic.py",
+      "bytes": 690,
+      "sha256": "09524ca7b0767c317c66ce7155db324a593879116b2669e8bb68e2ac36948464"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/sdd/validate_native.py",
+      "bytes": 3252,
+      "sha256": "38f8d366637412c165e043b94819c3d29e84667c1707059147280c9db0862db8"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/source_manifest.json",
+      "bytes": 3900,
+      "sha256": "5eaac54f05d0e4e46672ae4c743292ce3106df4d46c553c9b4eeb7e45f1fb252"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/220_cache_capacity.py",
+      "bytes": 12877,
+      "sha256": "28404632c31e4d08442c4d981ed642f3b4d959467dd7079974bead3cf277fe52"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/221_cache_capacity_digest.py",
+      "bytes": 14637,
+      "sha256": "6bb8772a599532bb41aada71721e3686012f601a6a30347cd8e236d1fe0f2453"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/222_cache_capacity_faststats.py",
+      "bytes": 14937,
+      "sha256": "690a19c236c60b2dd788c6ece04bd27a30fc35e2e901114263aeb8c92a1fe195"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/bench_cached_sparse.py",
+      "bytes": 12328,
+      "sha256": "01e34951f5bd50f0699c0aa416cc552a56fb493ece153326e1c6ab84805e3856"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/bench_memoized.py",
+      "bytes": 13890,
+      "sha256": "4893672c3658b34ee41630478a225e4cd7cda7f52bc6970d8da9953e1de36055"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/bench_stage2.py",
+      "bytes": 14028,
+      "sha256": "3ae7ff685419f69781f148e0ec7562f41695a2d272ffdb4e2f31a829cda51e84"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/bench_training_stage2.py",
+      "bytes": 11851,
+      "sha256": "c63ff0b7a90d6450fb717582c2d71eaf0abe54f38599931e2c1fd0eb3e5e4dea"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/cached_sparse_faststats_predictor.py",
+      "bytes": 4117,
+      "sha256": "f18690950c21f20b3bd3143fa4318cf3911b790b5039848dbc1e8e72b79c94d7"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/cached_sparse_predictor.py",
+      "bytes": 20165,
+      "sha256": "1fda59b1c28a5e0939f1ca1e1a48295652a53e085288b7c555b006dba2cd82b5"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/collect_stage2_artifacts.py",
+      "bytes": 24234,
+      "sha256": "c832109c0a8eb7354bb55231d1e9e8fc021dcb5d8d6fbc5542824f714ea7163b"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/001_sparse_gpu_unit.sh",
+      "bytes": 38,
+      "sha256": "b43fb564eb5512b4a3b80ef4c7227decbcc969e7dbef6e95493fbb79a770759b"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/010_gpu_stream_screen.sh",
+      "bytes": 177,
+      "sha256": "9214a39ae3c878de4c136b8c0ac6e9b1872bc71acd1c23ceb62ee3e102555bf4"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/011_stream_tiny_cuda.sh",
+      "bytes": 106,
+      "sha256": "d2838d2e222e6d1be16dd8a6da95a8004746cc5fb73562ee19c78c4541903a71"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/012_gpu_screen_fixed.sh",
+      "bytes": 180,
+      "sha256": "798946d0bc62b6271e0001a44b76b51c2ab2a785c0f2f8236a239bbaa7560715"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/020_sparse_cpu_hybrid.sh",
+      "bytes": 206,
+      "sha256": "16dc4124498347fe3f360f1cb384fe68c2bf7b312ff3cffac76a0c3e682fd479"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/021_hybrid_fixed.sh",
+      "bytes": 209,
+      "sha256": "1432c9335443da73f01e739396e713917dedad55b8635421e8adb282070f5def"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/030_graph_stream.sh",
+      "bytes": 190,
+      "sha256": "3050555befc15302f217bc83677f781d74bbc915864a88a7d07235b296766ac8"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/031_graph_stream_fixed.sh",
+      "bytes": 193,
+      "sha256": "7266e7e6997c7dada5ff0ef2fac48059b62030ac7ea6b54f920ae1932104a873"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/040_real_sparse_check.sh",
+      "bytes": 46,
+      "sha256": "eccd77b8e9b29bb02bd22f2e93d99b63a5e056cf2d0bc1ef92fd2101d92b4b99"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/041_real_sparse_check_fixed.sh",
+      "bytes": 46,
+      "sha256": "eccd77b8e9b29bb02bd22f2e93d99b63a5e056cf2d0bc1ef92fd2101d92b4b99"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/050_runtime_pool.sh",
+      "bytes": 111,
+      "sha256": "9ac307ff864d3c5d7125b120a2731c38b7d8b0c0e5fc86e664c3a6043d6ed117"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/060_cpu_sparse1.sh",
+      "bytes": 230,
+      "sha256": "db72fd6b1266a22028da1cf90063654407e1199be1497823f0edfda5765e482d"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/061_cpu_sparse16.sh",
+      "bytes": 232,
+      "sha256": "953aad19e96f49c04865c9dc56fe609076af2e542dcac6f7e9d4f1152496c7fa"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/072_official_native_real_check.sh",
+      "bytes": 141,
+      "sha256": "de4a08dc5bb9b67529dfe2c3d2a8da9e69bca6aabb07fd289af558a922292174"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/073_official_native_hybrid1.sh",
+      "bytes": 206,
+      "sha256": "345473a764e83c4f177b19e7c88ce902fb62a95cb3d2f12e2887db27183425c9"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/074_official_native_hybrid16.sh",
+      "bytes": 208,
+      "sha256": "debbc26e9a4c1508515a60be0985d697e0cea5be95eee63813fa5fee818da2ec"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/075_sparse_mm_tiny_gpu.sh",
+      "bytes": 94,
+      "sha256": "01c8593996bf5df9e55ced92e266cd3ab0a6619f50d457fe229ddf04947b8992"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/076_native_sparse_mm.sh",
+      "bytes": 222,
+      "sha256": "91f8bac99e165a44d8232e5da61b57782c8ceccbffc957385ad71b384d507981"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/077_memoized_hybrid.sh",
+      "bytes": 192,
+      "sha256": "6de79e55d74c011b4eadd596fdc5bd5cedaee975971beb1505888a5a7eed91de"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/078_memoized_hybrid_v2.sh",
+      "bytes": 195,
+      "sha256": "96cb856acf25a6ae40781d02daa49072c56fed9919d9572cf7bcf4142cc642ba"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/175_hybrid_pool16.sh",
+      "bytes": 195,
+      "sha256": "014453bd4ef191b2ea189570184f9fe935adb0cbd4c1ef04d0348a223a13c446"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/176_gbopt_hybrid.sh",
+      "bytes": 186,
+      "sha256": "b6ffd8ebd7242fcdb0b628af3fadd820383d05e3134fe1fad35b5dab8e2e01dc"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/180_profile.sh",
+      "bytes": 161,
+      "sha256": "371330d37a4f063f0c5761574a8aeaa9ed54ef413c8235e10f20d666e7bae76a"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/181_native_profile.sh",
+      "bytes": 160,
+      "sha256": "3654919fe06531a3373921c64064dd2e0929382f2066ae18739ddb2655918634"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/190_train_stream.sh",
+      "bytes": 156,
+      "sha256": "8d840276d72cb837e2d62f41644e132128f2cd2e092fadd81a9e3db7582cf2b1"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/191_native_train.sh",
+      "bytes": 194,
+      "sha256": "9620f1a2dc2591df5dfbb70865745ae16cf9d18a0a2329ee9cbbcda584cad9f5"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/200_cached_tiny.sh",
+      "bytes": 198,
+      "sha256": "ea454530568f32324cee8abf9534907dcce316d8e5e32d8102c3d3ec6bdaedad"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/210_cached_real.sh",
+      "bytes": 147,
+      "sha256": "c439a732d7087547ef3b8b88fcf031c0a73c6711c13e43f5bef6376d16359131"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/220_cache_capacity.sh",
+      "bytes": 171,
+      "sha256": "d0bf9a1735417be07ba5130355b21bdcf9627a5d9d45b2697a9c82f689afb1de"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/221_cache_capacity_digest.sh",
+      "bytes": 208,
+      "sha256": "aeaab4f4357423e4a9838205e20e5fc922c86c1d448ebd104e8496480fa94ed0"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/done/222_cache_capacity_faststats.sh",
+      "bytes": 285,
+      "sha256": "10a4a5197958ab7c3ea743c723ab16a55fab7cc760cc1d070bc354f6f9c6e4d4"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/map_allocation.py",
+      "bytes": 1340,
+      "sha256": "06ab862145579db2c405e2ebdd5d5b52001b7174a75b2f4b0b9186e175f6c54c"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/memoized_grounder.py",
+      "bytes": 17851,
+      "sha256": "65c9049a3b79b3f161bb88fb340ea47960bee186ea9bce0d8e914dfa7a0d3fab"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/official_native_adapter.cpp",
+      "bytes": 5369,
+      "sha256": "6a4ed7a9f4cef36fe8564195401b140ff33e0cea871a880fbb85feaac6a209ef"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/official_native_adapter.py",
+      "bytes": 9309,
+      "sha256": "2f50635b4a1245d4ebc8342c923eac5faff9375c028fa0bf24d60d755e22f88e"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/plot_results.py",
+      "bytes": 2139,
+      "sha256": "93b8c2853a82e7c8972b0bd3730b1b9eff0d01bade1652d150bad4cf3474f2e8"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/profile_stage2.py",
+      "bytes": 9868,
+      "sha256": "eb6aa7131869d34dc6eaa09913dc86ebf77758363939fccff3bdedee165cd14d"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/real_sparse_correctness.py",
+      "bytes": 3323,
+      "sha256": "df452d4ff5ea4f527ec5ecd76192688174980c4a2ae3f7620b6b6fb9ebde3377"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/run_pinned.sh",
+      "bytes": 450,
+      "sha256": "cf85759fb3315ea07da73ae516e93741aa0ddfa50d00637adcf8e677fad564f8"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/runtime_team_probe.c",
+      "bytes": 2262,
+      "sha256": "d0257f1a1074d1a726541be6fd26b46ec30ba220b4752be31fd07a0c79152c86"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/runtime_team_probe.py",
+      "bytes": 5960,
+      "sha256": "3d9cf27dc912fc430b150daeb6cd462a75140b489a7c38e5ebe78b7d1d059ba9"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/safe_runtime_launch.py",
+      "bytes": 1460,
+      "sha256": "97f13ca934728e745cfb03a6be8d62b0e7fccd32e16b30fdbc5c641ca1d489c4"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/simulator/external.yaml",
+      "bytes": 1925,
+      "sha256": "a951c3af3a81b8ae09243869e17aede905bd20b7d86ada043a1efd1d2b61eda6"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/simulator/external_config.py",
+      "bytes": 670,
+      "sha256": "20c1d4ec05f2a872a4be79f88121f66d3988024275c7bd55b0c3b2b31ceeab68"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/simulator/official_example.yaml",
+      "bytes": 2218,
+      "sha256": "f2378b52fd458bee8a65665786a071d50ae6bc2453f60ca227bc3f510b24fb52"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/simulator/ramulator_driver.cpp",
+      "bytes": 3809,
+      "sha256": "14b730186e7fc8eaa59ee20f3753c543a829e2de34750643f2e89601965295a2"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/simulator/reproduce_smoke.sh",
+      "bytes": 1129,
+      "sha256": "9d59d1f5acc86f47e9c9b3c28098b0958c93b1ceca4c1dfc92b224d3c04176e3"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/snapshot_sources.py",
+      "bytes": 530,
+      "sha256": "ca00dab363d079d243f8816764333aa75936400c1c085f4e74cef2c699395128"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/sparse_cpu_backend.py",
+      "bytes": 12944,
+      "sha256": "74fab4d0bca0ae602dbe17230d8d2192e3bf0a3fd2a1efcebfbcb70d34ed1f9e"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/sparse_cpu_backend_optimized.py",
+      "bytes": 3579,
+      "sha256": "ad1c14e4bf9bfca9e0d32d1cd172050e7eca28f442c4055590c56ef5f65d9b54"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/sparse_gpu_backend.py",
+      "bytes": 5869,
+      "sha256": "80f5667fcf26b10e8e7e9c02ce3f8d376c0c174fd56cbed213315d70828ce23b"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/sparse_mm_predictor.py",
+      "bytes": 6500,
+      "sha256": "87d3011fc17260a6c8c3ae4a6666ce7dc674c916f76498145743b915f33cd289"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/streaming_predictor.py",
+      "bytes": 13232,
+      "sha256": "387fc542987432d74f016d29febe7e84978d0641a128d422ce0d49c2839155a6"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/test_cached_sparse_faststats.py",
+      "bytes": 4181,
+      "sha256": "f229bb46356374440cfbc267a66f65503443ed8b91abc42899f3841bea950ef4"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/test_cached_sparse_predictor.py",
+      "bytes": 8387,
+      "sha256": "21c256f5985f21ebc97b9c8b2ebcd96583a53fc356aaae427007d9f388860b9e"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/test_memoized_grounder.py",
+      "bytes": 7944,
+      "sha256": "26d9b1f8b4b428ca774366b7ac42d1a3abb381fbf071c2c36de856521be041cf"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/test_official_native_adapter.py",
+      "bytes": 6085,
+      "sha256": "24a07b1ea0a9749ac27ea7f6ce5b4ca22190f318dd6a02906bea462c0c707986"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/test_sparse_cpu.py",
+      "bytes": 4041,
+      "sha256": "2864f228a662d0d883a981d4f6052c04547ff2507870c638e874e38fc45fd1ba"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/test_sparse_cpu_optimized.py",
+      "bytes": 462,
+      "sha256": "adbd340518a19316f26d3446f8ccb9590de734a3a4b8c9813aee29c74822f6d8"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/test_sparse_gpu.py",
+      "bytes": 2356,
+      "sha256": "d8857f9098a80d07b7895886e9b9d6c2ce89a6dba42db20931f6e9f0970fa7a0"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/test_sparse_mm_predictor.py",
+      "bytes": 5883,
+      "sha256": "7b910c89cb330c5423685abbd4c95d1adf4b3a4fc6f8c32b9d7e88676816f2ab"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/test_streaming_predictor.py",
+      "bytes": 8526,
+      "sha256": "81a566b3a71e61c2fe84d0f7b7dba745679c70565b2eeea630d54cefcc10ef17"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/test_streaming_sparse_integration.py",
+      "bytes": 2345,
+      "sha256": "91de8293a12e052f878339d89540e92f43efcc5621889b0e3d0927ef3b4a292d"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/worker.sh",
+      "bytes": 1083,
+      "sha256": "36d21432835725dc3b5044d5eefa8427438eb5a614674a5bc5c68f50f173416e"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/affinity_probe.py",
+      "bytes": 6148,
+      "sha256": "b6479d903fe087b3b5301294c6aa7f2b7e5a3cae148c1a6e671f7a50025eeab9"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/bench_cuda_graph.py",
+      "bytes": 20188,
+      "sha256": "a9c7af03ec71a37431092ca412859a5ba541b7ef0b058f556c853622eff72f1d"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/bench_train_step.py",
+      "bytes": 19418,
+      "sha256": "06ecd4cfd70bd0ae72e00af42dc70ab74c350d67b7aa2417f323e6f8ecfadade"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/cache_tests.py",
+      "bytes": 10298,
+      "sha256": "011250fbef566fe091c76280550d88964ec8460b53ea62872ccc868a505ce9a8"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/collect_results.py",
+      "bytes": 2246,
+      "sha256": "5e80bd005ee17e4de91ede9cb03a968d277c0b60a5746279312669a8f8ae634b"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/cpu_backend.py",
+      "bytes": 7744,
+      "sha256": "323228ba0d5abd3f1550f08f4a1bb81516601a9b19b9a6b80fa5c34387de816d"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/cpu_native.cpp",
+      "bytes": 2925,
+      "sha256": "217595eb99091027ee80acb6bd097158eec269d5e8d686972c5f757794ecb288"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/001_gpu_validation.sh",
+      "bytes": 91,
+      "sha256": "d30b9c376db2340d4c4ad90939f70c50f317dec78fb33849a53af411e2ad6744"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/010_gpu_smoke.sh",
+      "bytes": 280,
+      "sha256": "dbfdd5a57ba336b3fd8328593a2621e4632cee0aaaca1ac74f853950f842f76c"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/011_affinity.sh",
+      "bytes": 94,
+      "sha256": "945458fb8a9f34ebc67927706fb1b54e280721b0cf12c8a92d66ecddd7a72150"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/012_gpu_runtime_edge_validation.sh",
+      "bytes": 135,
+      "sha256": "2967d486cd8adf0cad496e20f5ceeb17812a9a3d88317f201f5a6142e71cd253"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/013_explicit_affinity.sh",
+      "bytes": 271,
+      "sha256": "d5b17fa7072babe6ff7471f26153b5875869f4f38364963705597e578101732f"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/014_mapping_readonly.sh",
+      "bytes": 2460,
+      "sha256": "22cb9a32bb68415afa3e5beed4a81650cf9657be2b4ac672ca8a0f7dc4aa906f"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/020_gpu_main.sh",
+      "bytes": 304,
+      "sha256": "ffb65c68a34a0cc0486725bc25714b2b2d1aee745b732b35d6f5bf74a73a6c64"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/030_gpu_batches.sh",
+      "bytes": 266,
+      "sha256": "21d316c03580b0ebe4b54abbc2590391a674a283be4c36b266666e421159e05b"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/040_cpu_main.sh",
+      "bytes": 257,
+      "sha256": "7c36ab8a032b81d95cf81e3531da6fa1a403ad94dda35e8de69971063db3b262"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/042_runtime_probe.sh",
+      "bytes": 354,
+      "sha256": "7a0370b441fefe27ddff23f5d76078f6146c16df009ba92c38b9d7748d2be3b8"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/050_real_graph_correctness.sh",
+      "bytes": 82,
+      "sha256": "9460f974bb573073a3b8573d2f67ae71d804cfb96d1efd03750bf2b56d6b56e6"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/060_official_wn_pna.sh",
+      "bytes": 253,
+      "sha256": "7179461bb8a34381837d2770975f504636686530a575120ac4d88c9aaccfdbf0"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/070_phase_profile.sh",
+      "bytes": 158,
+      "sha256": "8db9e0fdd3c2621d7bddbec2a0c602aac8ff8eae4160945b03b1168cd530ec52"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/080_bounded_lifetime.sh",
+      "bytes": 273,
+      "sha256": "ec3cf7942a622805d4fdeb4a66543f9b5cc8a46be367441de90a98c43da46766"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/090_train_step.sh",
+      "bytes": 64,
+      "sha256": "1a7b458f6b143640e31169467b4f28733cf7f9efa4c7f6a2c27b9f06b40fdcc7"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/100_small_relation_control.sh",
+      "bytes": 228,
+      "sha256": "26814fb99c71681a37cb77a4589c2e7e1b072651b4c7c80263c46f49217fbe92"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/110_cuda_graph.sh",
+      "bytes": 81,
+      "sha256": "f4963a5911de714ab86eb1625863679d6b0582767f51e861fc75d74842007cd3"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/120_prefix_schedule.sh",
+      "bytes": 441,
+      "sha256": "64e9656b4e99db0f6a893bffa6f755d64ba33e0a021a5340d90133291efafc75"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/121_prefix_cpu.sh",
+      "bytes": 244,
+      "sha256": "c384d6e0b2fa8a6b400c519cc415e8d4119e16147d0ad7cd4eb27ded3e0716fe"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/done/140_cpu_passive.sh",
+      "bytes": 294,
+      "sha256": "0cc1c8b7e46262373a6d29aed1ba9a3a29ae11d556c0e0d34cc318a93594c9a0"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/finalize_results.py",
+      "bytes": 9018,
+      "sha256": "076d554300c25613e25bcae115ac77e06f337694ace736085907f1efa0398004"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/gpu_backend.py",
+      "bytes": 13159,
+      "sha256": "e60173a53ff0e6dc196eab442957111d1a3ab34589e947f3ca40eb995b7f9155"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/plot_results.py",
+      "bytes": 3645,
+      "sha256": "305602edc4bb7ae105e2e5feaf991cfa2eb10b3b300029896e0e51d866bc6d45"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/prefix_cache.py",
+      "bytes": 11703,
+      "sha256": "8c4178dec752b782a8036dc60754f9d584e5016fa9a952d234bcde893941162f"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/profile_phases.py",
+      "bytes": 19441,
+      "sha256": "083966ef56bf46ecbed15fed418ab3d84517f8fcf55934158d06c62fc157d9ee"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/real_graph_correctness.py",
+      "bytes": 13911,
+      "sha256": "60c2a77098ddbbbe9a5b71e472af9bd61e4bc0d126a5b084a6e5e45baf0b7406"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/run_bench.py",
+      "bytes": 15515,
+      "sha256": "985e40a5bc40ba1f441f64688a3e80a53098732dfaaf16c0f50058e245a8b150"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/run_pinned.sh",
+      "bytes": 751,
+      "sha256": "4d530c474ba0a3823f9f5213882f5fc28a82eaadabced3eb861ef6538701ddec"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-strong-baselines/worker.sh",
+      "bytes": 1307,
+      "sha256": "001c44756847bd55e13b3bfaf7a1023ddb67840d0fb2ef3250eab5ddaf88d348"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/.gitignore",
+      "bytes": 83,
+      "sha256": "a6bb14fb80b3af489bc72f976d8d4925a0d9e576ceead403e39e84627d8c2b29"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_e2e/Cargo.lock",
+      "bytes": 33943,
+      "sha256": "4baa1490032f2b760f840f76be0335a8ac7a3e1c20829edfb77c430a623404d3"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_e2e/Cargo.toml",
+      "bytes": 298,
+      "sha256": "f2d161ab8c76b2ef8e4e22b6ad6cedb2c0d085950635120ce8595a337cb523ae"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_e2e/src/main.rs",
+      "bytes": 2965,
+      "sha256": "e1843331e8daf15885c964896ae4acf2335ec09f91bf433ebd4e927e5acb9c0c"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/.gitignore",
+      "bytes": 23,
+      "sha256": "337613937fda3acd2ba7834aa3e1b1eacfe04c9cafb336dfd6dfb7b6827d8f3e"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/Cargo.lock",
+      "bytes": 3804,
+      "sha256": "de5acaecbd3efff8a4418033b138699566eb1bbc69c57fde7015b56787082e73"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/Cargo.toml",
+      "bytes": 169,
+      "sha256": "0385c12ee548d2b9ad68adfbfe9252bd12dda99c083e48f09442b5ea1d0a0a7b"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/cache_scores_scallop.py",
+      "bytes": 1234,
+      "sha256": "f391899f663238809f8ec5363163aa890074102bb0869956f966663da4fa4873"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/clause.upstream.rs",
+      "bytes": 7119,
+      "sha256": "5d3e0bccbf09b8bc02a573dc12ccd201a2ad8a993fd8c8b774fbe6f6e5f5fd44"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/disjunction.upstream.rs",
+      "bytes": 2830,
+      "sha256": "b218fe4e300b84bd9dfd4c0563155bc1cf23ec8b9097d283606b5ae353fcf911"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/dnf_context.upstream.rs",
+      "bytes": 7474,
+      "sha256": "1e5156ae9bfd906645b56d38ed2082fcf9e8e6d647ca61f6bfc805f440f8fc86"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/dnf_formula.upstream.rs",
+      "bytes": 2519,
+      "sha256": "f39a02c06d2fa669cc0228f267843c6caaeb71eab194b73e87be0dd090023dac"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/extract_upstream.py",
+      "bytes": 1210,
+      "sha256": "406236933a0dc2d9b0f66720b32c5bb943bcaeff8429d65ccb867f541f6b0455"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/instrument_scallop.py",
+      "bytes": 4903,
+      "sha256": "e210e4c2c9616285d756b51fcef262f6ebda9733faa5e9e810f592c1272ccefe"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/instrument_wmc_scallop.py",
+      "bytes": 4963,
+      "sha256": "d72f8b06d5f2b648669a18c7e0b0b5b2801d5b4584b4c3d2ab234f7f7fb642ce"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/literal.upstream.rs",
+      "bytes": 1001,
+      "sha256": "f012279a463c10ef6ccf69935f5ca160b748d81c2ae55e75dea6ac7efe84c8e8"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/memo_eval_scallop.py",
+      "bytes": 1962,
+      "sha256": "d00fc8706589423fe0460db5985fad83e4184edca1c8b30d1e24d8f9e83c7db8"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/memo_gc_scallop.py",
+      "bytes": 931,
+      "sha256": "613c5e63c5a54d67dd0461872fda1433870094fe39d27182a876e5a26c61e19a"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/src/clause.rs",
+      "bytes": 7119,
+      "sha256": "5d3e0bccbf09b8bc02a573dc12ccd201a2ad8a993fd8c8b774fbe6f6e5f5fd44"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/src/disjunction.rs",
+      "bytes": 2830,
+      "sha256": "b218fe4e300b84bd9dfd4c0563155bc1cf23ec8b9097d283606b5ae353fcf911"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/src/dnf_context.rs",
+      "bytes": 7474,
+      "sha256": "1e5156ae9bfd906645b56d38ed2082fcf9e8e6d647ca61f6bfc805f440f8fc86"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/src/dnf_formula.rs",
+      "bytes": 2233,
+      "sha256": "d42bc3511afb1fad1b5759500ac1912c36f310c3506acf1cfa740760b5f6c7e9"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/src/literal.rs",
+      "bytes": 767,
+      "sha256": "ba5614c46903ccd70169186c9c30b6c74d6cdf737172694b3aa94a13c7011e44"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/src/main.rs",
+      "bytes": 8085,
+      "sha256": "26b7e5d9b8b7f1947bf244e8e02a3242d778e61b1994452f9abb6ba210055238"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/Cargo.lock",
+      "bytes": 1775,
+      "sha256": "6dbec84ba52686f7456e50cc4041bc389faed25ce709ed2574a8666bda1e21d4"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/Cargo.toml",
+      "bytes": 125,
+      "sha256": "4fe8357c93fdeffaa7cefe9ca84ffed7c644ed76b2a310486a1464f53b66e9f5"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/src/main.rs",
+      "bytes": 2027,
+      "sha256": "c4e6d5459c96710e9fb608d77021a2c32d0bf8ab05cb3eeef1b90de0f1870312"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/upstream_sdd/.gitignore",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/upstream_sdd/Cargo.toml",
+      "bytes": 154,
+      "sha256": "fb3845756808c682962afa506ff595b5be6a09c98da8edfea217b0eb074c052f"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/upstream_sdd/dots/.gitignore",
+      "bytes": 6,
+      "sha256": "7e0186ae2cc4f2416a2eb541b093eb66b22537f5a647987cf20c39943253f8f0"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/upstream_sdd/src/bottom_up.rs",
+      "bytes": 15269,
+      "sha256": "cf7624aa45ebeaadc7f2193532715ca94afb80486c83bf9261295ad37e2ad0a9"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/upstream_sdd/src/formula.rs",
+      "bytes": 4469,
+      "sha256": "84afc6d611e855583aa67bd0eda13c8cefd391c4ee2fb8984aee29072f036194"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/upstream_sdd/src/lib.rs",
+      "bytes": 170,
+      "sha256": "90d17fb72afbd7142e9194d292b4aa312a4c1f5be75e19249fe8d1b24b9deb6f"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/upstream_sdd/src/sdd.rs",
+      "bytes": 9534,
+      "sha256": "821e451252863d21165de2133931d3577be08095aa49f6e132e7011355ee8c52"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/upstream_sdd/src/semiring.rs",
+      "bytes": 750,
+      "sha256": "84d34e97430e52478b58c8f6e7d5fe44344df9b9ba5b3f9e7abd5c4c8d6b153f"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/upstream_sdd/src/vtree.rs",
+      "bytes": 16691,
+      "sha256": "7bb9b694c3287725b18fbbf9c0aae365efb9c04b41a67b09e2fcefce33f686be"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/upstream_sdd/tests/bool_formula.rs",
+      "bytes": 127,
+      "sha256": "a70e7967778cef1acf9c98f63424926b99a3e67c879803f7d12ea1291f96a3d3"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/upstream_sdd/tests/bottom_up_sdd.rs",
+      "bytes": 3505,
+      "sha256": "2c744d355440aa50594c140f1feab04f3e2322ef012f588b15d3a65142faed07"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/upstream_sdd/tests/disjunction.rs",
+      "bytes": 614,
+      "sha256": "558c40175e7be8329fbadfb10dd198e3f5590ff01c8f883b56ec242afc5fd06d"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/upstream_sdd/tests/generate_dot.rs",
+      "bytes": 819,
+      "sha256": "6965178f91dbf4fcc2624ce37e1dc880ebd8483632d7b1be55f3ba9f3b741e46"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/c1_native/wmc_verify/upstream_sdd/tests/vtree.rs",
+      "bytes": 987,
+      "sha256": "fe654f3ed36fe0cfdf030a4ec97e563a520be1d70f2fb6c94d0f080f73710068"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/fixtures/hwf_3_controlled.scl",
+      "bytes": 331,
+      "sha256": "79d970ca6698fc56c117d74430952ecd0787dc4e8ea090f7ff254c4268654daa"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/fixtures/hwf_5_controlled.scl",
+      "bytes": 437,
+      "sha256": "5fa10447ba61284cbb1b0c926884dffe2b3fa5eb18a5977034216c9f141b48d9"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/fixtures/path_dag20_controlled.scl",
+      "bytes": 1071,
+      "sha256": "1671a5b4ca506648902e348529195b9095406fd274de0501bd3863925ecf1f51"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/results/scallop_instrumentation_and_controls.patch",
+      "bytes": 14195,
+      "sha256": "407bcb4b237962a95d8a412fd7d385ec0cdd5ff57cbcd457906c90e8aeea98b5"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/scripts/dolphin_profile.py",
+      "bytes": 23225,
+      "sha256": "d8ca3dbcf8fa371d06f39889cf46ee20f02d03071508c6e87c3d1811f01620cd"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/scripts/paired_scallop.py",
+      "bytes": 1036,
+      "sha256": "4fb2ce4ab0d276ed009e1ee6a5ea72e2529b1b0f3e80be29fd707defd2638725"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/scripts/run_scallop_programs.py",
+      "bytes": 2553,
+      "sha256": "3c9d7aa340747dfc914502c5ee46cc58e830c2c4d19c577f812c8a1c9656c246"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/scripts/run_scallop_suite.sh",
+      "bytes": 625,
+      "sha256": "a4148655980ba15673ceb45eeaca5e428159cda3e13545ba2b2c35e73c731524"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/scripts/summarize.py",
+      "bytes": 5835,
+      "sha256": "78d6e3c8963386ab8f9165c9afc623a32e14086f37c68d44549283302bf94944"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/scripts/wmc_controls.py",
+      "bytes": 1973,
+      "sha256": "68894a65bc33ef33be63d2705fc7553a708a89584bd71a6e567761ddc63aac31"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/allrelation_screen.py",
+      "bytes": 8995,
+      "sha256": "26bdbd1154806c8c6b2137a4bd35a8124b995ada6bb57c319a0e6565a5fa2915"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/bench_deletion_delta.py",
+      "bytes": 9387,
+      "sha256": "22b33f6060e41af60f2dfcdd574d9d2389eacc6363acde0da8777ab5178e95d2"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/bench_spa_native.py",
+      "bytes": 8589,
+      "sha256": "943d59811c5864b10c7533a09de04faca4b6f7d49ccc74726d15abf845bb3590"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/cache_lru.py",
+      "bytes": 16510,
+      "sha256": "ed252bfe82fc91a6990ee403cc54b95bdad7a3a6eafa5d6aaee108c4441af0ae"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/capacity_policy_replay.py",
+      "bytes": 8350,
+      "sha256": "8d84f07b99b7228c542062de12b67a0e03294268c29bdfd55a06432367f42ea0"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/collect_stage3.py",
+      "bytes": 8079,
+      "sha256": "18daec132f0d45521a86e1d2c94e5dad9f8f0b6ec738f06991426b99122832e6"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/cpu_capacity/capacity_cpu.sh",
+      "bytes": 1006,
+      "sha256": "d324e90851825c16b256243da7ecf10c242c5a7f36af004ad569084443148de6"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/cpu_capacity/map_allocation.py",
+      "bytes": 1340,
+      "sha256": "06ab862145579db2c405e2ebdd5d5b52001b7174a75b2f4b0b9186e175f6c54c"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/cpu_capacity_resume/capacity_resume_cpu.sh",
+      "bytes": 1527,
+      "sha256": "4b4aa6403f411514fcab556d3b23b5395142b8ec53ab8b780370264babc509e0"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/cpu_capacity_resume/map_allocation.py",
+      "bytes": 1340,
+      "sha256": "06ab862145579db2c405e2ebdd5d5b52001b7174a75b2f4b0b9186e175f6c54c"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/cpu_support/map_allocation.py",
+      "bytes": 1348,
+      "sha256": "0360edc915dfd1f71b5bdfdc750459e13b73555fb6f180b1d2e9fa820bd83818"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/cpu_support/trace_cpu.sh",
+      "bytes": 941,
+      "sha256": "ab066ad2171a4d486435a1db1227e5aabfb3c4ca12445fd992c93aa79c8ab2bc"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/deletion_delta_control.py",
+      "bytes": 6434,
+      "sha256": "56a63d3bf15f4d4266901d4bc70b4196517a8d57c6e8814aefc7497683fa1ec7"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/delta_cpu/map_allocation.py",
+      "bytes": 1340,
+      "sha256": "06ab862145579db2c405e2ebdd5d5b52001b7174a75b2f4b0b9186e175f6c54c"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/delta_cpu/run.sh",
+      "bytes": 837,
+      "sha256": "25d38f37e7df813d6059f55ddb39206afb7377d8b7ba8a60ebca4365b60d1f06"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/005_trace.sh",
+      "bytes": 89,
+      "sha256": "d3f1144df27499d050b1937d9a2a4bdab85d960cf2f6528d55328160d2e94090"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/010_pna_test.sh",
+      "bytes": 197,
+      "sha256": "eabe9091d97f6830bf025f3a72900a69ad0d5861f7a0297b4098c925fe437d28"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/015_cache_test.sh",
+      "bytes": 125,
+      "sha256": "7e5f26ce51b820a4cb1fd27e7a135d3daccef6dd0cf03a6e670600f60ef6c7bd"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/020_pna_real.sh",
+      "bytes": 222,
+      "sha256": "42f00e9a28cb7b663fecde78d363adfd4db1fe55b43f709e3967568432d8a542"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/025_gpu_cache_test.sh",
+      "bytes": 188,
+      "sha256": "928f92554bb504570847c42bb3cb8805adab564734817a6fa1731abb85987da2"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/026_gpu_cache_real.sh",
+      "bytes": 165,
+      "sha256": "a84a366dcb55b4cd52fabedd39a4475e26aa651a56207ca710bfcd963c66e5ab"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/030_screen_wn.sh",
+      "bytes": 549,
+      "sha256": "599c325291b17a35fe26f71e02e6dd5c1645dec6cb91c41e2df7f58fc25d5b79"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/040_screen_fb.sh",
+      "bytes": 555,
+      "sha256": "88d778172a48867d50891f553258ec75ab459dc1d3342cc9d6a778364036813b"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/045_screen_wn2048.sh",
+      "bytes": 275,
+      "sha256": "e77df375e1489a6292ea621a139e932eb7a7a05030e651d0e5cc65382d8f6e05"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/046_pna_profile.sh",
+      "bytes": 201,
+      "sha256": "215a54a8580145db5da1a3fcc88795d5739100daa2a337324dc2ac08039bf95d"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/050_wn_stream_pilot.sh",
+      "bytes": 393,
+      "sha256": "6caa7854b7e836a439eef70a26b804c50db1d53ddd931f3bf3e4be482529a8bf"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/051_wn_stream_uncached.sh",
+      "bytes": 314,
+      "sha256": "609da0a4c610c03a5c6448e7415287c16ebacca57557c8ed76ca2b13d0b70740"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/052_wn_stream_cache.sh",
+      "bytes": 325,
+      "sha256": "9a59415e8f069e7aa4be01ab76c77311b4a6b485bfbea8e9851dc589fcf27505"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/054_pna_compile.sh",
+      "bytes": 345,
+      "sha256": "d7cc47d4d03ef90102af886d5685490f30ba2aa602285dadf5df4974a1140bb0"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/055_pna_training.sh",
+      "bytes": 213,
+      "sha256": "99ce0a3ac89245e3ee59a2f1bfb4fff640979f0789261bc97efdeb9dd5f79bec"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/done/099_release_gpu.sh",
+      "bytes": 90,
+      "sha256": "89fe15ed37287f6e284a280904aa6074b871f154deef05b4b8184d4887c16834"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/fb_remaining_job.sh",
+      "bytes": 1489,
+      "sha256": "a2b93d8ef4a92009c35407d7f9d13f1f86a9e9e9b0c51f7b400fd066a179fc2e"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/finalize_evidence.sh",
+      "bytes": 489,
+      "sha256": "393c7459144c2e42c4a00d5350c70b749185b53f759f06346654a06e6b7e0906"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/gpu_cache_bench.py",
+      "bytes": 9881,
+      "sha256": "b04cba03e72065638e23bd226a4d502bcd2d1a38c7594f95b9d9c7d206d7df19"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/gpu_cache_builder.py",
+      "bytes": 12956,
+      "sha256": "41251411dab86aade9e96f0cc517a542d9487558264df39a9fcfc86f8aa58555"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/gpu_evidence_summary.py",
+      "bytes": 9389,
+      "sha256": "5e95eb145b58aa303ce7448add3494b63904f51b4ed02878edca35db2b0239e8"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/map_allocation.py",
+      "bytes": 1424,
+      "sha256": "e2efcf09c7916eda9b1950e5574f03766f8c3bbbdb11e9f141a395f0fffbb192"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/merge_fb_screens.py",
+      "bytes": 1817,
+      "sha256": "8c4ffd44326ba2d0a2078a75557ac82493b8cb5b7d61057a6319c5d294df6c0b"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/native_capacity_census.py",
+      "bytes": 18198,
+      "sha256": "c7fb8e1f9391aa5a6d56269827df927ff2b648765d3ed37477e38bf8c64de6de"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/plot_spa_results.py",
+      "bytes": 2385,
+      "sha256": "26646e07e6d1f32e9a8e8f2814ce7af3f648aedae6887e453d14b814dc997081"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/plot_stream_results.py",
+      "bytes": 3532,
+      "sha256": "ffcf483d6109eae6958df82b31c9a36a807e0cb1f2bcb0be66a3933ebb5fcf21"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/pna_bench.py",
+      "bytes": 12191,
+      "sha256": "da0f3124373261d6a968d0d40696d62694431219e24827b2be2bc808507cc929"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/pna_compile_bench.py",
+      "bytes": 8991,
+      "sha256": "aa21f517113d5444582aef7ebf4d1e9f8970ee281eeb55fb723d6e8e75fcca8c"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/pna_fixture_cpu/map_allocation.py",
+      "bytes": 1340,
+      "sha256": "06ab862145579db2c405e2ebdd5d5b52001b7174a75b2f4b0b9186e175f6c54c"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/pna_fixture_cpu/run.sh",
+      "bytes": 804,
+      "sha256": "c687f07de67d64b0fde6287658f9f1e1430857cf5480c755dd5a1691e9b92f87"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/pna_materialize_fixtures.py",
+      "bytes": 12806,
+      "sha256": "693a6af9062b6d27de34eb02bef21feb6287af0840cf50343ee5014b525cfae2"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/pna_predictor.py",
+      "bytes": 14374,
+      "sha256": "f85ea268689fab2a4a2a61d40ddf89d65854707f9bb21b21133c43b134470dee"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/pna_profile.py",
+      "bytes": 7051,
+      "sha256": "884a5491768815186b155d04454a4f2d964c258882bc47075244d2860f974359"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/pna_training_control.py",
+      "bytes": 3668,
+      "sha256": "78cbb36cbfb481f5134afb222e95a10d5699a37a3ef3ef5ae0ca6890ca298063"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/prepare_fb_remaining.py",
+      "bytes": 611,
+      "sha256": "c2cbcd20885717f33ede1023225200205df947dcfaa1cf8bd72657dccd3dbba1"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/query_stream.py",
+      "bytes": 22730,
+      "sha256": "bb70711525b53161a0e6e8be9e3f7cdf5a94914ec7a2112c16589821531dd4bc"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/refresh_proposal_stage3.py",
+      "bytes": 6796,
+      "sha256": "d66dc2686fc6e658f7d28cda27423d04843e040260b1684d5085bf8d8ac18668"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/run_pinned.sh",
+      "bytes": 450,
+      "sha256": "6c713ce97642aa7219effcde1b8b1bc83a4b2dd346e4cf399d44f6f75fd1f391"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/runner.py",
+      "bytes": 6371,
+      "sha256": "abe31db6bf81778d5dc29029ade208fad575826868e6227efaaf5577195cdb01"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/runtime_modern/run_gpu.sh",
+      "bytes": 1703,
+      "sha256": "d6251263e7126d4b80bdf20e924235105794332974801b2ea90432d00934d9d4"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/runtime_modern/runtime_report.py",
+      "bytes": 5448,
+      "sha256": "af69f7ffa9b0c85ee80fbb5a07922def69256170d64e171f0465bc5283cf4171"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/runtime_modern/standalone_layer_bench.py",
+      "bytes": 15818,
+      "sha256": "ae97afa5b68898ae1af15bb5a1b5bc8b562b489f5f3b7992c683dbbfde2cae7a"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/safe_runtime_launch.py",
+      "bytes": 1460,
+      "sha256": "97f13ca934728e745cfb03a6be8d62b0e7fccd32e16b30fdbc5c641ca1d489c4"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/snapshot_sources.py",
+      "bytes": 535,
+      "sha256": "1a2e240d19a049afc7d2c7821a4e6cdb5780d0e89931b8c78e7da491511f1e21"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/spa_cpu/map_allocation.py",
+      "bytes": 1340,
+      "sha256": "06ab862145579db2c405e2ebdd5d5b52001b7174a75b2f4b0b9186e175f6c54c"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/spa_cpu/run.sh",
+      "bytes": 1029,
+      "sha256": "3692784301887856b186b961fdb3109d4c37945058e7ee61b5c9eba424571788"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/spa_native_adapter.cpp",
+      "bytes": 6252,
+      "sha256": "041b1794a9f800c9af40c011be5f46e63a604fa782f2935c969fb8420fea3ff9"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/spa_native_adapter.py",
+      "bytes": 5684,
+      "sha256": "c49c14621773b7259e12784106f868000b4985ae87aedd2bfb61301fcd7c8b5c"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/stream_replay.py",
+      "bytes": 12715,
+      "sha256": "331fb784e57d43a112b40ace8cf5a0ee9a66363f6d1144efdc6f51e8bebc7f10"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/test_cache_lru.py",
+      "bytes": 8457,
+      "sha256": "1302a9b2d0eb321a3aa83a22b7a1854559c1af76f4a1cf8d514c38a3c71d1ad7"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/test_capacity_policy_independent.py",
+      "bytes": 4921,
+      "sha256": "a3576a7fb9968174f5635950a7f0185b338b866d67d02ddc0903a7b7080c52eb"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/test_gpu_cache_builder.py",
+      "bytes": 8257,
+      "sha256": "d9361aee8085cc4c50640862202d8b5a8c2ef6dc77b9028c1ec88286f8d65b5a"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/test_pna_predictor.py",
+      "bytes": 14106,
+      "sha256": "6d8ee6474470886883bc1b0234597c9fd1321de0e8eaa675007eb8e30a946287"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/test_spa_native.py",
+      "bytes": 4528,
+      "sha256": "d5fcfd29dd1a84d67ca658e3c2e57dacb8696a8d1015c7db31c58f49f1eb81f3"
+    },
+    {
+      "path": "profiling/2026-10-16-rnnlogic-stage3/worker.sh",
+      "bytes": 1343,
+      "sha256": "150c2cbc17aea9d6c02af9f902c2ec70d03abd0fbca3f1b592ccd422411aad7e"
+    }
+  ],
+  "nested_repositories": [
+    {
+      "path": "profiling/2026-10-14-candidate-tests/contact/upstream/DiffCloth",
+      "head": "91801521fbeea5d739f822f4334f1a9bbb3ff436",
+      "remotes": "origin\thttps://github.com/omegaiota/DiffCloth (fetch)\norigin\thttps://github.com/omegaiota/DiffCloth (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/contact/upstream/DiffCloth/external/eigen",
+      "head": "1c013be2cc6a999268be2f25575cd6a07bd52c45",
+      "remotes": "origin\thttps://gitlab.com/libeigen/eigen.git (fetch)\norigin\thttps://gitlab.com/libeigen/eigen.git (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/contact/upstream/DiffCloth/external/pybind11",
+      "head": "b6ec0e950c4a12d25cadf492f193ced94f681d6c",
+      "remotes": "origin\thttps://github.com/pybind/pybind11.git (fetch)\norigin\thttps://github.com/pybind/pybind11.git (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/geometry/upstream/alphageometry2",
+      "head": "251e7e16f0bba8ac7c83cdea789fccc195d0c0c7",
+      "remotes": "origin\thttps://github.com/google-deepmind/alphageometry2 (fetch)\norigin\thttps://github.com/google-deepmind/alphageometry2 (push)",
+      "patch": "docs/source-preservation/20261027/alphageometry2.patch",
+      "patch_sha256": "298713e1fed233704570256d71696374836ef0af9a8fd80eff8373fd5567a4d2",
+      "changed_files": [
+        {
+          "path": "elimination.py",
+          "sha256": "98934917748da6b36f7d54ca9af349238ca2175832ab95ba6cdd45ee8207cf81"
+        }
+      ]
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/egraph/upstream/egg",
+      "head": "73975c9819efb4af2f3c6c1b44fa53f8c5742574",
+      "remotes": "origin\thttps://github.com/egraphs-good/egg (fetch)\norigin\thttps://github.com/egraphs-good/egg (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/upstream/vampire",
+      "head": "d260185c0eeb1634ddc001d7ded426ce6bbb8773",
+      "remotes": "origin\thttps://github.com/vprover/vampire (fetch)\norigin\thttps://github.com/vprover/vampire (push)",
+      "patch": "docs/source-preservation/20261027/vampire.patch",
+      "patch_sha256": "ed8b7d3bac1af353c098a56b8019443fc6a6ddc185d1fad1bcc823928d9a64b0",
+      "changed_files": [
+        {
+          "path": "Inferences/CodeTreeForwardSubsumptionAndResolution.cpp",
+          "sha256": "4d889ec96ba4f8ab540e112ed62fe48a2a1fc3ad88f5b4828b1900e1ac31d3cf"
+        },
+        {
+          "path": "Inferences/ForwardSubsumptionAndResolution.cpp",
+          "sha256": "669425362c41b1c53aa51d3ac38c874f9b9465b32c49a358f416aee3b8aeae53"
+        },
+        {
+          "path": "Makefile",
+          "sha256": "b09872ec09652aaed849f534bb7acec2a589b29b8af80aaed669c0318cfe6954"
+        },
+        {
+          "path": "Saturation/NeuralPassiveClauseContainers.cpp",
+          "sha256": "5d67be8b6e2fa4c37eb39ee886e76130655f6d7a1f098be88d652f2beeb90e83"
+        },
+        {
+          "path": "Shell/Statistics.cpp",
+          "sha256": "4e3ab951c3be70f7d35b286137f74803232784e70359c0754d46eb8147c693a5"
+        }
+      ],
+      "untracked_header": {
+        "source_path": "candidate_forward_timer.hpp",
+        "preserved_path": "docs/source-preservation/20261027/vampire-candidate_forward_timer.hpp",
+        "sha256": "71ee051f53709046e7501b3d0e008ce180f0d02b300ae872a1a2351f07a81c3d"
+      }
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/upstream/vampire/cadical",
+      "head": "f13d74439a5b5c963ac5b02d05ce93a8098018b8",
+      "remotes": "origin\thttps://github.com/arminbiere/cadical (fetch)\norigin\thttps://github.com/arminbiere/cadical (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/upstream/vampire/z3",
+      "head": "3c47fd96cf5645d0c42b2c819d9e9a84380aa721",
+      "remotes": "origin\thttps://github.com/Z3Prover/z3 (fetch)\norigin\thttps://github.com/Z3Prover/z3 (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/upstream/vampire/viras",
+      "head": "a2ed173c65aca8d3189b5c6150914cd99adea1df",
+      "remotes": "origin\thttps://github.com/joe-hauns/viras (fetch)\norigin\thttps://github.com/joe-hauns/viras (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/fol/upstream/materials",
+      "head": "41b05d8ecfcf5acc6b719820a7027feccbc4884c",
+      "remotes": "origin\thttps://github.com/quickbeam123/deepire2.0-supplementary-materials (fetch)\norigin\thttps://github.com/quickbeam123/deepire2.0-supplementary-materials (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/sdd/upstream/deepproblog",
+      "head": "f64181f66a3a789a96a47d7c2d3fae4d56178990",
+      "remotes": "origin\thttps://github.com/ML-KULeuven/deepproblog (fetch)\norigin\thttps://github.com/ML-KULeuven/deepproblog (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/kg/upstream/RNNLogic",
+      "head": "c890b025a14d6294d93222388a449fda8a851009",
+      "remotes": "origin\thttps://github.com/DeepGraphLearning/RNNLogic.git (fetch)\norigin\thttps://github.com/DeepGraphLearning/RNNLogic.git (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/border_basis/upstream/OracleBorderBasis",
+      "head": "c05d529d80d0080a6e97bc454e636d0672a3d7ba",
+      "remotes": "origin\thttps://github.com/HiroshiKERA/OracleBorderBasis (fetch)\norigin\thttps://github.com/HiroshiKERA/OracleBorderBasis (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/ppl/upstream/UPIX",
+      "head": "8656406efd17f84999e9ac42d8cc2dcd0089f532",
+      "remotes": "origin\thttps://github.com/ipa-lab/UPIX (fetch)\norigin\thttps://github.com/ipa-lab/UPIX (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/planning/upstream/Jacinle",
+      "head": "4b4f00dc455185a58748051db9461623357d65b2",
+      "remotes": "origin\thttps://github.com/vacancy/Jacinle.git (fetch)\norigin\thttps://github.com/vacancy/Jacinle.git (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/planning/upstream/PDSketch",
+      "head": "1c5ffb9bc9a41b89451e0224091c6cbdfeea29e3",
+      "remotes": "origin\thttps://github.com/vacancy/PDSketch-Alpha-Release.git (fetch)\norigin\thttps://github.com/vacancy/PDSketch-Alpha-Release.git (push)",
+      "patch": "docs/source-preservation/20261027/PDSketch.patch",
+      "patch_sha256": "1b1a7462bdf4491a45c827819a06351b2d7b53f92dc55c4b1974f98bf80a9cfe",
+      "changed_files": [
+        {
+          "path": "hacl/envs/gridworld/minigrid/pds_files/minigrid-v20220407-envaction-full.pdsketch",
+          "sha256": "f8465a109fa063e89a8f056f8bf434a3f498f5f0b80911429283f92a8e7ac9f7"
+        }
+      ]
+    },
+    {
+      "path": "profiling/2026-10-14-candidate-tests/planning/upstream/AdvancedIndexing",
+      "head": "59d80aa7c8b7d56f506cab7aa75ffe3d365c5107",
+      "remotes": "origin\thttps://github.com/vacancy/AdvancedIndexing-PyTorch (fetch)\norigin\thttps://github.com/vacancy/AdvancedIndexing-PyTorch (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/simulator/ramulator2",
+      "head": "c6c7a5de0cef35935d6fad7369e6271406798865",
+      "remotes": "origin\thttps://github.com/CMU-SAFARI/ramulator2.git (fetch)\norigin\thttps://github.com/CMU-SAFARI/ramulator2.git (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/simulator/ramulator2/ext/fmt",
+      "head": "e69e5f977d458f2650bb346dadf2ad30c5320281",
+      "remotes": "origin\thttps://github.com/fmtlib/fmt.git (fetch)\norigin\thttps://github.com/fmtlib/fmt.git (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-rnnlogic-sparse-stage2/simulator/ramulator2/ext/yaml-cpp",
+      "head": "56e3bb550c91fd7005566f19c079cb7a503223cf",
+      "remotes": "origin\thttps://github.com/jbeder/yaml-cpp.git (fetch)\norigin\thttps://github.com/jbeder/yaml-cpp.git (push)"
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/upstream/scallop",
+      "head": "668bfb6d45ce302fd4ffa7f29916baf3c7ce36ef",
+      "remotes": "origin\thttps://github.com/scallop-lang/scallop.git (fetch)\norigin\thttps://github.com/scallop-lang/scallop.git (push)",
+      "patch": "docs/source-preservation/20261027/scallop.patch",
+      "patch_sha256": "407bcb4b237962a95d8a412fd7d385ec0cdd5ff57cbcd457906c90e8aeea98b5",
+      "changed_files": [
+        {
+          "path": "core/src/runtime/provenance/common/as_boolean_formula.rs",
+          "sha256": "40d9db721fa6d1e555297337cc2d5a25ca4f476fe89f2b96d79945aa4c6d0aa5"
+        },
+        {
+          "path": "core/src/runtime/provenance/common/dnf_context.rs",
+          "sha256": "d4a4aab3226963c85f836fd35aa8c546e32c54a343bd6871a312bf2916201e5f"
+        },
+        {
+          "path": "lib/sdd/src/bottom_up.rs",
+          "sha256": "cf7624aa45ebeaadc7f2193532715ca94afb80486c83bf9261295ad37e2ad0a9"
+        },
+        {
+          "path": "lib/sdd/src/sdd.rs",
+          "sha256": "821e451252863d21165de2133931d3577be08095aa49f6e132e7011355ee8c52"
+        }
+      ]
+    },
+    {
+      "path": "profiling/2026-10-14-txt-first/upstream/dolphin",
+      "head": "aebddf94de3dcec46307f1ebb6563f8ac7a62cd7",
+      "remotes": "origin\thttps://github.com/Dolphin-NeSy/Dolphin.git (fetch)\norigin\thttps://github.com/Dolphin-NeSy/Dolphin.git (push)"
+    }
+  ],
+  "checks": {
+    "python_ast": 121,
+    "shell_syntax": 84,
+    "failures": []
+  },
+  "scope": "Authored source and upstream modification provenance; not a complete environment or raw-result archive."
+}

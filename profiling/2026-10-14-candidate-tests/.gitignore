@@ -1,0 +1,17 @@
+**/upstream/
+**/deps/
+**/venv/
+**/build/
+**/__pycache__/
+**/.pytest_cache/
+**/*.pth
+**/*.pt
+**/sage-env/
+**/py-env/
+**/mamba-root/
+**/envtools/
+**/*.so
+**/*.so.*
+**/*.deb
+fol/vampire_baseline
+fol/vampire_diagnostic

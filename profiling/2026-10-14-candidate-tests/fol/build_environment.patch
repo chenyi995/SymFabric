@@ -1,0 +1,31 @@
+diff --git a/Makefile b/Makefile
+index 996205c..6c0a924 100644
+--- a/Makefile
++++ b/Makefile
+@@ -31,8 +31,8 @@ ifeq ($(OS),Darwin) # don't forget we need clang for libtorch (not working with
+ TORCHLINK= -Wl,-search_paths_first -Wl,-headerpad_max_install_names
+ TORCHLIB= -Wl,-rpath,$(LIBTORCH)/lib $(LIBTORCH)/lib/libc10.dylib $(LIBTORCH)/lib/libtorch.dylib $(LIBTORCH)/lib/libtorch_cpu.dylib
+ else
+-TORCHLINK= -D_GLIBCXX_USE_CXX11_ABI=1 -rdynamic
+-TORCHLIB= -Wl,-rpath,$(LIBTORCH)/lib $(LIBTORCH)/lib/libtorch.so $(LIBTORCH)/lib/libc10.so $(LIBTORCH)/lib/libkineto.a -Wl,--no-as-needed,"$(LIBTORCH)/lib/libtorch_cpu.so" -Wl,--as-needed $(LIBTORCH)/lib/libc10.so -lpthread -Wl,--no-as-needed,"$(LIBTORCH)/lib/libtorch.so" -Wl,--as-needed
++TORCHLINK= -D_GLIBCXX_USE_CXX11_ABI=0 -rdynamic
++TORCHLIB= -Wl,-rpath,$(LIBTORCH)/lib $(LIBTORCH)/lib/libtorch.so $(LIBTORCH)/lib/libc10.so  -Wl,--no-as-needed,"$(LIBTORCH)/lib/libtorch_cpu.so" -Wl,--as-needed $(LIBTORCH)/lib/libc10.so -lpthread -Wl,--no-as-needed,"$(LIBTORCH)/lib/libtorch.so" -Wl,--as-needed
+ endif
+ 
+ COMMON_FLAGS = -DVTIME_PROFILING=0
+@@ -89,13 +89,13 @@ XFLAGS = -Wfatal-errors -g -DVDEBUG=1 -DCHECK_LEAKS=0 -DUSE_SYSTEM_ALLOCATION=1
+ #XFLAGS = -O6 -DVDEBUG=0 -DUSE_SYSTEM_ALLOCATION=1 -DEFENCE=1 -g -lefence #Electric Fence
+ #XFLAGS = -O6 -DVDEBUG=0 -DUSE_SYSTEM_ALLOCATION=1 -g
+ 
+-INCLUDES= -I. -I/opt/local/include -Icadical/src -Imini-gmp-6.3.0 -Iviras/src
++INCLUDES= -I. -I/opt/local/include -I/zpool-00/home/cw636/chenyi/SymFabric/profiling/2026-10-14-candidate-tests/fol/deps/gmp/usr/include/x86_64-linux-gnu -I/zpool-00/home/cw636/chenyi/SymFabric/profiling/2026-10-14-candidate-tests/fol/deps/gmp/usr/include -Icadical/src -Imini-gmp-6.3.0 -Iviras/src
+ 
+ OS = $(shell uname)
+ ifeq ($(OS),Darwin)
+ INCLUDES := $(INCLUDES) -Ilibtorch/include -Ilibtorch/include/torch/csrc/api/include
+ else
+-INCLUDES := $(INCLUDES) -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -isystem $(LIBTORCH)/include -isystem $(LIBTORCH)/include/torch/csrc/api/include  -D_GLIBCXX_USE_CXX11_ABI=1   -D_GLIBCXX_USE_CXX11_ABI=1
++INCLUDES := $(INCLUDES) -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -isystem $(LIBTORCH)/include -isystem $(LIBTORCH)/include/torch/csrc/api/include  -D_GLIBCXX_USE_CXX11_ABI=0   -D_GLIBCXX_USE_CXX11_ABI=0
+ endif
+ 
+ Z3FLAG= -DVZ3=0

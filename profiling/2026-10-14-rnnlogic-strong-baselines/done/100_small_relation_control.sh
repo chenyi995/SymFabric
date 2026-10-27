@@ -1,0 +1,1 @@
+bash run_pinned.sh run_bench.py --device cuda --cases FB15k-237:116 --threads 1 --batches 1 32 --splits train valid --variants upstream torch_all csr_last --repeats 5 --warmup 2 --gradient-check --output gpu_small_relation.json

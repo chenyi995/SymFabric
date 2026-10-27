@@ -1,0 +1,98 @@
+diff --git a/Inferences/CodeTreeForwardSubsumptionAndResolution.cpp b/Inferences/CodeTreeForwardSubsumptionAndResolution.cpp
+index d45aed9..28cde2b 100644
+--- a/Inferences/CodeTreeForwardSubsumptionAndResolution.cpp
++++ b/Inferences/CodeTreeForwardSubsumptionAndResolution.cpp
+@@ -1,3 +1,4 @@
++#include "candidate_forward_timer.hpp"
+ /*
+  * This file is part of the source code of the software program
+  * Vampire. It is protected by applicable
+@@ -36,6 +37,8 @@ void CodeTreeForwardSubsumptionAndResolution::detach()
+ 
+ bool CodeTreeForwardSubsumptionAndResolution::perform(Clause *cl, Clause *&replacement, ClauseIterator &premises)
+ {
++  nesy_forward_diag::Scope nesy_fwd_probe(0);
++
+   if (_ct->isEmpty()) {
+     return false;
+   }
+diff --git a/Inferences/ForwardSubsumptionAndResolution.cpp b/Inferences/ForwardSubsumptionAndResolution.cpp
+index f59dde0..6b8e486 100644
+--- a/Inferences/ForwardSubsumptionAndResolution.cpp
++++ b/Inferences/ForwardSubsumptionAndResolution.cpp
+@@ -1,3 +1,4 @@
++#include "candidate_forward_timer.hpp"
+ /*
+  * This file is part of the source code of the software program
+  * Vampire. It is protected by applicable
+@@ -69,6 +70,8 @@ bool ForwardSubsumptionAndResolution::perform(Clause *cl,
+                                               Clause *&replacement,
+                                               ClauseIterator &premises)
+ {
++  nesy_forward_diag::Scope nesy_fwd_probe(1);
++
+   TIME_TRACE("forward subsumption");
+ 
+   ASS(replacement == nullptr)
+diff --git a/Makefile b/Makefile
+index 996205c..6c0a924 100644
+--- a/Makefile
++++ b/Makefile
+@@ -31,8 +31,8 @@ ifeq ($(OS),Darwin) # don't forget we need clang for libtorch (not working with
+ TORCHLINK= -Wl,-search_paths_first -Wl,-headerpad_max_install_names
+ TORCHLIB= -Wl,-rpath,$(LIBTORCH)/lib $(LIBTORCH)/lib/libc10.dylib $(LIBTORCH)/lib/libtorch.dylib $(LIBTORCH)/lib/libtorch_cpu.dylib
+ else
+-TORCHLINK= -D_GLIBCXX_USE_CXX11_ABI=1 -rdynamic
+-TORCHLIB= -Wl,-rpath,$(LIBTORCH)/lib $(LIBTORCH)/lib/libtorch.so $(LIBTORCH)/lib/libc10.so $(LIBTORCH)/lib/libkineto.a -Wl,--no-as-needed,"$(LIBTORCH)/lib/libtorch_cpu.so" -Wl,--as-needed $(LIBTORCH)/lib/libc10.so -lpthread -Wl,--no-as-needed,"$(LIBTORCH)/lib/libtorch.so" -Wl,--as-needed
++TORCHLINK= -D_GLIBCXX_USE_CXX11_ABI=0 -rdynamic
++TORCHLIB= -Wl,-rpath,$(LIBTORCH)/lib $(LIBTORCH)/lib/libtorch.so $(LIBTORCH)/lib/libc10.so  -Wl,--no-as-needed,"$(LIBTORCH)/lib/libtorch_cpu.so" -Wl,--as-needed $(LIBTORCH)/lib/libc10.so -lpthread -Wl,--no-as-needed,"$(LIBTORCH)/lib/libtorch.so" -Wl,--as-needed
+ endif
+ 
+ COMMON_FLAGS = -DVTIME_PROFILING=0
+@@ -89,13 +89,13 @@ XFLAGS = -Wfatal-errors -g -DVDEBUG=1 -DCHECK_LEAKS=0 -DUSE_SYSTEM_ALLOCATION=1
+ #XFLAGS = -O6 -DVDEBUG=0 -DUSE_SYSTEM_ALLOCATION=1 -DEFENCE=1 -g -lefence #Electric Fence
+ #XFLAGS = -O6 -DVDEBUG=0 -DUSE_SYSTEM_ALLOCATION=1 -g
+ 
+-INCLUDES= -I. -I/opt/local/include -Icadical/src -Imini-gmp-6.3.0 -Iviras/src
++INCLUDES= -I. -I/opt/local/include -I/zpool-00/home/cw636/chenyi/SymFabric/profiling/2026-10-14-candidate-tests/fol/deps/gmp/usr/include/x86_64-linux-gnu -I/zpool-00/home/cw636/chenyi/SymFabric/profiling/2026-10-14-candidate-tests/fol/deps/gmp/usr/include -Icadical/src -Imini-gmp-6.3.0 -Iviras/src
+ 
+ OS = $(shell uname)
+ ifeq ($(OS),Darwin)
+ INCLUDES := $(INCLUDES) -Ilibtorch/include -Ilibtorch/include/torch/csrc/api/include
+ else
+-INCLUDES := $(INCLUDES) -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -isystem $(LIBTORCH)/include -isystem $(LIBTORCH)/include/torch/csrc/api/include  -D_GLIBCXX_USE_CXX11_ABI=1   -D_GLIBCXX_USE_CXX11_ABI=1
++INCLUDES := $(INCLUDES) -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -isystem $(LIBTORCH)/include -isystem $(LIBTORCH)/include/torch/csrc/api/include  -D_GLIBCXX_USE_CXX11_ABI=0   -D_GLIBCXX_USE_CXX11_ABI=0
+ endif
+ 
+ Z3FLAG= -DVZ3=0
+diff --git a/Saturation/NeuralPassiveClauseContainers.cpp b/Saturation/NeuralPassiveClauseContainers.cpp
+index 906397a..8e21576 100644
+--- a/Saturation/NeuralPassiveClauseContainers.cpp
++++ b/Saturation/NeuralPassiveClauseContainers.cpp
+@@ -124,7 +124,7 @@ NeuralClauseEvaluationModel::NeuralClauseEvaluationModel(const std::string claus
+   _gageCombine = _model.attr("gage_combine").toModule();
+ 
+   _gweightEmbeddingSize = (*_model.find_method("gweight_embedding_size"))({}).toInt();
+-  auto _gweightVarEmbed = _model.attr("gweight_var_embed").toModule().forward({torch::Tensor()}).toTensor();
++  auto _gweightVarEmbed = _model.attr("gweight_var_embed").toModule().attr("weight").toTensor().select(0, 0);
+   _gweightTermEmbedStore.insert(0,_gweightVarEmbed);
+ 
+   _gweightTermCombine = _model.attr("gweight_term_combine").toModule();
+diff --git a/Shell/Statistics.cpp b/Shell/Statistics.cpp
+index 9d1e586..b9ead64 100644
+--- a/Shell/Statistics.cpp
++++ b/Shell/Statistics.cpp
+@@ -1,3 +1,4 @@
++#include "candidate_forward_timer.hpp"
+ /*
+  * This file is part of the source code of the software program
+  * Vampire. It is protected by applicable
+@@ -66,6 +67,8 @@ void Statistics::explainRefutationNotFound(std::ostream& out)
+ 
+ void Statistics::print(std::ostream& out)
+ {
++  nesy_forward_diag::emit();
++
+   if (env.options->statistics() != Options::Statistics::NONE) {
+ 
+   SaturationAlgorithm::tryUpdateFinalClauseCount();

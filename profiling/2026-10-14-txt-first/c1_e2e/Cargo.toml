@@ -1,0 +1,15 @@
+[package]
+name = "c1-e2e-profile"
+version = "0.1.0"
+edition = "2021"
+[dependencies]
+scallop-core = { path = "../upstream/scallop/core" }
+serde_json = "1"
+lalrpop-util = { version = "0.19.12", features = ["lexer"] }
+
+[workspace]
+resolver = "1"
+
+[features]
+default = ["diagnostics"]
+diagnostics = []

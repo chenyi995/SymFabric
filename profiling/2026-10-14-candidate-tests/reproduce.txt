@@ -1,0 +1,25 @@
+复现入口（固定版本见source_manifest.json，原始结果见manifest.json）
+
+目录 /zpool-00/home/cw636/chenyi/SymFabric/profiling/2026-10-14-candidate-tests
+所有正式时间来自Slurm compute node，未将排队、构建、下载计入算子时间。
+Python常用解释器 /home/cw636/venvs/epic/bin/python（3.10，torch2.5.1+cu124）。
+脚本应从各自当前文件完整运行；路径通过__file__定位。外部依赖位于各候选deps/upstream，未改系统库。
+
+常用CPU启动方式：
+srun -p athena-small -w node4 -N1 -n1 -c1 --mem=12G -t 00:15:00 /home/cw636/venvs/epic/bin/python <script>
+GPU增加 --gres=gpu:1（KG需要24GB级显存）。
+脚本内部限制torch/OpenMP线程；CPU1是单线程实验口径，不表示独占整节点或所有实验进行了CPU affinity绑定。共享节点噪声和样本数限制见原始重复值。
+
+PDSketch：planning/bench.py --steps 500 --eval-n 10 --task goto --structure full
+KG：kg/bench.py（查看其argparse选择cpu/cuda及输出名），kg/diagnostic.py是独立性能诊断；最终可信文件为results_v3_cpu/cuda，排除excluded_debug。
+AG2：geometry/bench.py与bench_zero_hoist.py，补丁zero_hoist.patch；输入为官方测试题，部分包含已给定辅助点。
+egg：egraph/bench_heavier.py，调用Release官方Rust测试binary，需先在固定源码构建对应math/lambda tests，计时读Runner报告而非进程启动。
+BorderBasis：PATH增加border_basis/sage-env/bin，使用该环境python执行border_basis/bench.py；必要的sortedcontainers已安装。
+SDD：sdd/bench_multi.py、bench_native.py、validate_native.py（后者同节点交错复核+共享证据+分派检查）。复用的CNN权重和MNIST在../2026-10-14-txt-first/results，图像预处理随权重保持不变。
+UPIX：ppl/py-env/bin/python ppl/profile_upix.py，CPU2；低预算首次执行，非稳态/收敛性能。
+DiffCloth：contact/profile_hat.py。binding位于contact/build；CMakeCache和构建日志保存了本地X11/GL sysroot路径，未改算法。首次依赖构建不在测量内。
+Vampire：fol/bench.py baseline/diagnostic实际失败；不把失败耗时视为性能。fol/bench_symbolic.py单列30秒符号控制。
+
+Vampire构建：最新mtpa-gnn SHA已固定；先递归submodules，在cadical中./configure和make，再按Makefile的vampire_rel构建。build_environment.patch只改本机torch/GMP路径及ABI。baseline binary没有诊断与模型兼容修改；diagnostic binary包含diagnostic.patch、candidate_forward_timer.hpp、model_compatibility.patch。后者仍不兼容公开模型的GNN输入维度，禁止把它标为成功。该embedding修复未影响不加载模型的符号控制。
+
+正确性检查和性能检查分开：KG输出mask/logit对照，AG2目标谓词，egg官方goal assertion，BorderBasis精确rowspace，SDD完整概率分布及共享证据，DiffCloth既有成功标志/有限梯度。上述检查不能代替完整论文精度/独立证明证书/后验收敛。

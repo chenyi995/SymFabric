@@ -1,0 +1,13 @@
+diff --git a/hacl/envs/gridworld/minigrid/pds_files/minigrid-v20220407-envaction-full.pdsketch b/hacl/envs/gridworld/minigrid/pds_files/minigrid-v20220407-envaction-full.pdsketch
+index 791be71..53b3f31 100644
+--- a/hacl/envs/gridworld/minigrid/pds_files/minigrid-v20220407-envaction-full.pdsketch
++++ b/hacl/envs/gridworld/minigrid/pds_files/minigrid-v20220407-envaction-full.pdsketch
+@@ -79,7 +79,7 @@
+ 
+ (:action forward
+     :parameters (?r - robot)
+-    :precondition (robot-fecing-clear ?r)
++    :precondition (robot-facing-clear ?r)
+     :effect (and
+         (robot-pose::assign ?r (robot-facing ?r))
+     )

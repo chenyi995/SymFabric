@@ -1,0 +1,1 @@
+/home/cw636/venvs/epic/bin/python run_bench.py --device cuda --cases FB15k-237:272 --threads 1 --batches 8 --splits train --variants upstream torch_all torch_last atomic_all atomic_last atomic_lru32 csr_all csr_last --repeats 3 --warmup 1 --gradient-check --output gpu_smoke.json

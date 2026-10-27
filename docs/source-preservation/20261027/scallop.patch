@@ -1,0 +1,328 @@
+diff --git a/core/src/runtime/provenance/common/as_boolean_formula.rs b/core/src/runtime/provenance/common/as_boolean_formula.rs
+index 02e79a1..2e1ff69 100644
+--- a/core/src/runtime/provenance/common/as_boolean_formula.rs
++++ b/core/src/runtime/provenance/common/as_boolean_formula.rs
+@@ -12,6 +12,13 @@ pub trait AsBooleanFormula {
+     S: Semiring,
+     V: Fn(&usize) -> S::Element,
+   {
++    if wmc_profile_active() {
++      let formula_start = std::time::Instant::now();
++      let formula = self.as_boolean_formula();
++
++      let formula_ns = formula_start.elapsed().as_nanos() as u64;
++      return profiled_wmc_run(formula, formula_ns, s, v, "wmc");
++    }
+     let formula = self.as_boolean_formula();
+     let sdd_config = sdd::bottom_up::SDDBuilderConfig::with_formula(&formula);
+     let sdd_builder = sdd::bottom_up::SDDBuilder::with_config(sdd_config);
+@@ -25,6 +32,26 @@ pub trait AsBooleanFormula {
+     S: Semiring,
+     V: Fn(&usize) -> S::Element,
+   {
++    if wmc_profile_active() {
++      let formula_start = std::time::Instant::now();
++      let formula = self.as_boolean_formula();
++  
++      // Adding disjunction as part of formula
++      let formula_with_disj = sdd::bf_disjunction(std::iter::once(formula).chain(disj.disjunctions.iter().map(|disj| {
++        sdd::bf_conjunction(disj.facts.iter().map(|to_be_neg_fact_id| {
++          sdd::bf_disjunction(disj.facts.iter().map(|fact_id| {
++            if fact_id == to_be_neg_fact_id {
++              sdd::bf_neg(fact_id.clone())
++            } else {
++              sdd::bf_pos(fact_id.clone())
++            }
++          }))
++        }))
++      })));
++
++      let formula_ns = formula_start.elapsed().as_nanos() as u64;
++      return profiled_wmc_run(formula_with_disj, formula_ns, s, v, "wmc_with_disjunctions");
++    }
+     let formula = self.as_boolean_formula();
+ 
+     // Adding disjunction as part of formula
+@@ -46,3 +73,84 @@ pub trait AsBooleanFormula {
+     sdd.eval_t(v, s)
+   }
+ }
++
++// TXT_FIRST_WMC_PROFILE: diagnostic timing only, no cached/eager evaluation.
++#[derive(Default)]
++struct WmcProfileStats {
++  enabled: bool,
++  calls: std::collections::BTreeMap<&'static str, u64>,
++  stage_ns: std::collections::BTreeMap<&'static str, [u64;6]>,
++  sdd_nodes_total: u64,
++  sdd_nodes_max: usize,
++  formula_node_total: u64,
++  formula_keys: std::collections::BTreeMap<Vec<usize>, u64>,
++}
++std::thread_local! {
++  static TXT_WMC_PROFILE: std::cell::RefCell<WmcProfileStats> = std::cell::RefCell::new(WmcProfileStats::default());
++}
++fn wmc_profile_active() -> bool { TXT_WMC_PROFILE.with(|p| p.borrow().enabled) }
++/// Enable and clear per-thread WMC diagnostics. Does not reset DNF diagnostics.
++pub fn wmc_profile_reset() {
++  TXT_WMC_PROFILE.with(|p| { let mut q=p.borrow_mut(); *q=WmcProfileStats::default(); q.enabled=true; });
++}
++pub fn wmc_profile_disable() { TXT_WMC_PROFILE.with(|p| p.borrow_mut().enabled=false); }
++/// Exact ordered syntax key, including every variable ID; no hash collisions.
++fn wmc_formula_key(f: &sdd::BooleanFormula, key: &mut Vec<usize>) -> u64 {
++  use sdd::BooleanFormula::*;
++  match f {
++    False => {key.push(0);1}, True => {key.push(1);1},
++    Pos{var_id} => {key.push(2);key.push(*var_id);1},
++    Neg{var_id} => {key.push(3);key.push(*var_id);1},
++    Not{form} => {key.push(4);1+wmc_formula_key(form,key)},
++    And{left,right} => {key.push(5);1+wmc_formula_key(left,key)+wmc_formula_key(right,key)},
++    Or{left,right} => {key.push(6);1+wmc_formula_key(left,key)+wmc_formula_key(right,key)},
++  }
++}
++fn profiled_wmc_run<S,V>(formula:sdd::BooleanFormula, formula_ns:u64,
++                         s:&S,v:&V,op:&'static str)->S::Element
++where S:Semiring,V:Fn(&usize)->S::Element {
++  let mut times=[formula_ns,0,0,0,0,0];
++  let start=std::time::Instant::now();
++  let config=sdd::bottom_up::SDDBuilderConfig::with_formula(&formula);
++  times[1]=start.elapsed().as_nanos() as u64;
++  let start=std::time::Instant::now();
++  let builder=sdd::bottom_up::SDDBuilder::with_config(config);
++  times[2]=start.elapsed().as_nanos() as u64;
++  let start=std::time::Instant::now();
++  let diagram=builder.build(&formula);
++  times[3]=start.elapsed().as_nanos() as u64;
++  let start=std::time::Instant::now();
++  let value=diagram.eval_t(v,s);
++  times[4]=start.elapsed().as_nanos() as u64;
++  let nodes=diagram.sdd_nodes.len();
++  let mut key=Vec::new();
++  let formula_nodes=wmc_formula_key(&formula,&mut key);
++  let start=std::time::Instant::now();
++  drop(diagram);drop(formula);
++  times[5]=start.elapsed().as_nanos() as u64;
++  TXT_WMC_PROFILE.with(|p| {
++    let mut q=p.borrow_mut();
++    *q.calls.entry(op).or_default()+=1;
++    let total=q.stage_ns.entry(op).or_default();for i in 0..6 {total[i]+=times[i];}
++    q.sdd_nodes_total+=nodes as u64;q.sdd_nodes_max=q.sdd_nodes_max.max(nodes);
++    q.formula_node_total+=formula_nodes;
++    *q.formula_keys.entry(key).or_default()+=1;
++  });
++  value
++}
++pub fn wmc_profile_report()->serde_json::Value {
++  TXT_WMC_PROFILE.with(|p| {
++    let q=p.borrow();
++    let repeated_calls=q.formula_keys.values().map(|n|n-1).sum::<u64>();
++    serde_json::json!({
++      "note":"Per-thread diagnostic; Instant overhead included; exact formula-key bookkeeping excluded. build includes upstream apply recursion, garbage collection, and consumed-builder cleanup. No evaluation or compilation cache added.",
++      "stage_order":["formula","config_vtree","builder_init","build_sdd","eval_sdd","drop_sdd_formula"],
++      "calls":q.calls,"stage_ns":q.stage_ns,
++      "sdd_nodes_total":q.sdd_nodes_total,"sdd_nodes_max":q.sdd_nodes_max,
++      "formula_nodes_total":q.formula_node_total,
++      "unique_exact_formula_syntax":q.formula_keys.len(),
++      "repeated_exact_formula_calls":repeated_calls,
++      "max_exact_formula_reuses":q.formula_keys.values().max().copied().unwrap_or(0)
++    })
++  })
++}
+diff --git a/core/src/runtime/provenance/common/dnf_context.rs b/core/src/runtime/provenance/common/dnf_context.rs
+index d152b2f..bce6418 100644
+--- a/core/src/runtime/provenance/common/dnf_context.rs
++++ b/core/src/runtime/provenance/common/dnf_context.rs
+@@ -30,6 +30,18 @@ pub trait DNFContextTrait {
+   }
+ 
+   fn retain_top_k(&self, clauses: &mut Vec<Clause>, k: usize) {
++    // TXT_FIRST_CACHE_SCORES: stable ordering and exact probability fold preserved.
++    static CACHE_SCORES: std::sync::OnceLock<bool> = std::sync::OnceLock::new();
++    if *CACHE_SCORES.get_or_init(|| std::env::var("SCALLOP_CACHE_SCORES").as_deref() == Ok("1")) {
++      let mut scored = std::mem::take(clauses).into_iter().map(|c| {
++        let score = self.clause_probability(&c);
++        (score, c)
++      }).collect::<Vec<_>>();
++      scored.sort_by(|a, b| b.0.partial_cmp(&a.0).unwrap());
++      scored.truncate(k);
++      *clauses = scored.into_iter().map(|(_, c)| c).collect();
++      return;
++    }
+     clauses.sort_by(|p1, p2| {
+       self
+         .clause_probability(p1)
+@@ -209,17 +221,51 @@ pub trait DNFContextTrait {
+   }
+ 
+   fn top_k_add(&self, t1: &DNFFormula, t2: &DNFFormula, k: usize) -> DNFFormula {
++    if !profile_active() {
++      let mut t = t1.or(t2);
++      t.dedup();
++      self.retain_top_k(&mut t.clauses, k);
++      return t;
++    }
++    let start = std::time::Instant::now();
+     let mut t = t1.or(t2);
++    let a = start.elapsed().as_nanos() as u64;
++    let n0 = t.clauses.len();
++    let start = std::time::Instant::now();
+     t.dedup();
++    let b = start.elapsed().as_nanos() as u64;
++    let n1 = t.clauses.len();
++    let start = std::time::Instant::now();
+     self.retain_top_k(&mut t.clauses, k);
++    let d = start.elapsed().as_nanos() as u64;
++    profile_record("add", [a,b,0,d], [n0,n1,n1,t.clauses.len()], t1, t2, k);
+     t
+   }
+ 
+   fn top_k_mult(&self, t1: &DNFFormula, t2: &DNFFormula, k: usize) -> DNFFormula {
++    if !profile_active() {
++      let mut t = t1.and(t2);
++      t.dedup();
++      self.retain_no_conflict(&mut t.clauses);
++      self.retain_top_k(&mut t.clauses, k);
++      return t;
++    }
++    let start = std::time::Instant::now();
+     let mut t = t1.and(t2);
++    let a = start.elapsed().as_nanos() as u64;
++    let n0 = t.clauses.len();
++    let start = std::time::Instant::now();
+     t.dedup();
++    let b = start.elapsed().as_nanos() as u64;
++    let n1 = t.clauses.len();
++    let start = std::time::Instant::now();
+     self.retain_no_conflict(&mut t.clauses);
++    let c = start.elapsed().as_nanos() as u64;
++    let n2 = t.clauses.len();
++    let start = std::time::Instant::now();
+     self.retain_top_k(&mut t.clauses, k);
++    let d = start.elapsed().as_nanos() as u64;
++    profile_record("mult", [a,b,c,d], [n0,n1,n2,t.clauses.len()], t1, t2, k);
+     t
+   }
+ 
+@@ -251,3 +297,53 @@ pub trait DNFContextTrait {
+       .fold(DNFFormula::one(), |a, b| self.top_k_mult(&a, &b, k))
+   }
+ }
++
++// TXT_FIRST_PROFILE_INSTRUMENTATION; deterministic algorithms unchanged.
++#[derive(Default)]
++struct ProfileStats {
++  enabled: bool,
++  calls: BTreeMap<&'static str, u64>,
++  stages: BTreeMap<&'static str, [u64; 4]>,
++  candidates: BTreeMap<&'static str, [u64; 4]>,
++  shapes: BTreeMap<(&'static str, usize, usize, usize, usize, usize), u64>,
++}
++std::thread_local! {
++  static TXT_PROFILE: std::cell::RefCell<ProfileStats> = std::cell::RefCell::new(ProfileStats::default());
++}
++fn profile_active() -> bool { TXT_PROFILE.with(|p| p.borrow().enabled) }
++/// Enable and clear per-thread diagnostic counters. Time this separately from baseline runs.
++pub fn profile_reset() {
++  TXT_PROFILE.with(|p| { let mut q = p.borrow_mut(); *q = ProfileStats::default(); q.enabled = true; });
++}
++/// Disable counters without deleting them.
++pub fn profile_disable() { TXT_PROFILE.with(|p| p.borrow_mut().enabled = false); }
++fn profile_record(op: &'static str, times: [u64;4], counts: [usize;4],
++                  left: &DNFFormula, right: &DNFFormula, k: usize) {
++  let lm = left.clauses.iter().map(|c| c.literals.len()).max().unwrap_or(0);
++  let rm = right.clauses.iter().map(|c| c.literals.len()).max().unwrap_or(0);
++  TXT_PROFILE.with(|p| {
++    let mut q = p.borrow_mut();
++    *q.calls.entry(op).or_default() += 1;
++    let stages = q.stages.entry(op).or_default();
++    for i in 0..4 { stages[i] += times[i]; }
++    let candidates = q.candidates.entry(op).or_default();
++    for i in 0..4 { candidates[i] += counts[i] as u64; }
++    *q.shapes.entry((op,k,left.clauses.len(),right.clauses.len(),lm,rm)).or_default() += 1;
++  });
++}
++/// Return counters for the current thread; stage durations omit instrumentation bookkeeping.
++pub fn profile_report() -> serde_json::Value {
++  TXT_PROFILE.with(|p| {
++    let q = p.borrow();
++    let shapes: Vec<_> = q.shapes.iter().map(|((op,k,l,r,lm,rm),n)| serde_json::json!({
++      "op":op,"k":k,"left_proofs":l,"right_proofs":r,
++      "max_left_literals":lm,"max_right_literals":rm,"calls":n
++    })).collect();
++    serde_json::json!({
++      "note":"Diagnostic instrumented native run; counters are per thread; elapsed timings include Instant overhead; bookkeeping omitted from stage times.",
++      "stage_order":["and_or_merge","dedup","disjunction_conflict","score_and_top_k"],
++      "candidate_order":["after_merge","after_dedup","after_conflict","retained"],
++      "calls":q.calls,"stage_ns":q.stages,"candidate_counts":q.candidates,"shapes":shapes
++    })
++  })
++}
+diff --git a/lib/sdd/src/bottom_up.rs b/lib/sdd/src/bottom_up.rs
+index 09a1ac8..015d888 100644
+--- a/lib/sdd/src/bottom_up.rs
++++ b/lib/sdd/src/bottom_up.rs
+@@ -202,7 +202,13 @@ impl SDDBuilder {
+   }
+ 
+   fn mark_visited(sdd_nodes: &SDDNodes, node: SDDNodeIndex, visited: &mut HashSet<SDDNodeIndex>) {
+-    visited.insert(node);
++    // TXT_FIRST_MEMO_GC: same reachable-node set, visit each DAG node once.
++    static MEMO_GC: std::sync::OnceLock<bool> = std::sync::OnceLock::new();
++    if *MEMO_GC.get_or_init(|| std::env::var("SCALLOP_MEMO_GC").as_deref() == Ok("1")) {
++      if !visited.insert(node) { return; }
++    } else {
++      visited.insert(node);
++    }
+     match &sdd_nodes[node] {
+       SDDNode::Literal { .. } => {}
+       SDDNode::Or { children } => {
+diff --git a/lib/sdd/src/sdd.rs b/lib/sdd/src/sdd.rs
+index 1f37a63..716c4da 100644
+--- a/lib/sdd/src/sdd.rs
++++ b/lib/sdd/src/sdd.rs
+@@ -155,7 +155,14 @@ impl SDD {
+     T: Semiring,
+     V: Fn(&usize) -> T::Element,
+   {
+-    self.eval_node_t(self.roots[0], var_assign, semiring)
++    // TXT_FIRST_MEMO_EVAL: never reuse values across evaluations/weights.
++    static MEMO_EVAL: std::sync::OnceLock<bool> = std::sync::OnceLock::new();
++    if *MEMO_EVAL.get_or_init(|| std::env::var("SCALLOP_MEMO_EVAL").as_deref() == Ok("1")) {
++      let mut cache = HashMap::new();
++      self.eval_node_t_memo(self.roots[0], var_assign, semiring, &mut cache)
++    } else {
++      self.eval_node_t(self.roots[0], var_assign, semiring)
++    }
+   }
+ 
+   fn eval_node_t<T, V>(&self, node_id: SDDNodeIndex, var_assign: &V, semiring: &T) -> T::Element
+@@ -178,6 +185,29 @@ impl SDD {
+     }
+   }
+ 
++  fn eval_node_t_memo<T, V>(&self, node_id: SDDNodeIndex, var_assign: &V, semiring: &T, cache: &mut HashMap<SDDNodeIndex, T::Element>) -> T::Element
++  where
++    T: Semiring,
++    V: Fn(&usize) -> T::Element,
++  {
++    if let Some(value) = cache.get(&node_id) { return value.clone(); }
++    let result = match &self.sdd_nodes[node_id] {
++      SDDNode::Or { children } => children.iter().fold(semiring.zero(), |acc, SDDElement { prime, sub }| {
++        let prime_res = self.eval_node_t_memo(prime.clone(), var_assign, semiring, cache);
++        let sub_res = self.eval_node_t_memo(sub.clone(), var_assign, semiring, cache);
++        semiring.add(acc, semiring.mult(prime_res, sub_res))
++      }),
++      SDDNode::Literal { literal } => match literal {
++        SDDLiteral::PosVar { var_id } => var_assign(var_id),
++        SDDLiteral::NegVar { var_id } => semiring.negate(var_assign(var_id).clone()),
++        SDDLiteral::True => semiring.one(),
++        SDDLiteral::False => semiring.zero(),
++      },
++    };
++    cache.insert(node_id, result.clone());
++    result
++  }
++
+   pub fn dot(&self) -> String {
+     fn literal_label(literal: &SDDLiteral) -> String {
+       match literal {

@@ -1,0 +1,1 @@
+bash run_pinned.sh safe_runtime_launch.py bench_stage2.py --device cpu --cases FB15k-237:272 wn18rr:12 --variants upstream csr stream_32 scipy_32 scipy_128 graphblas_32 graphblas_128 --threads 16 --grad --output cpu_sparse_t16.json

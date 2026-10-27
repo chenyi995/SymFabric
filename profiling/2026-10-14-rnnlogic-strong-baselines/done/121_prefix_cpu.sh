@@ -1,0 +1,1 @@
+bash run_pinned.sh run_bench.py --device cpu --cases FB15k-237:272 wn18rr:12 --threads 8 16 --batches 32 --splits train valid --rule-order prefix --variants native_last native_lastlru128 --repeats 3 --warmup 1 --output cpu_prefix_schedule.json

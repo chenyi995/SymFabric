@@ -1,0 +1,15 @@
+diff --git a/elimination.py b/elimination.py
+index 49611d7..675a5a7 100644
+--- a/elimination.py
++++ b/elimination.py
+@@ -57,8 +57,9 @@ class LinComb:
+     coef = fractions.Fraction(coef)
+     if coef == 0:
+       return
++    zero = fractions.Fraction(0)
+     for x, c2 in other.d.items():
+-      c1 = self.d.get(x, fractions.Fraction(0))
++      c1 = self.d.get(x, zero)
+       c = c1 + c2 * coef
+       if c == 0:
+         del self.d[x]

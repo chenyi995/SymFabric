@@ -1,0 +1,1 @@
+bash run_pinned.sh safe_runtime_launch.py bench_stage2.py --cases FB15k-237:272 wn18rr:12 --variants csr graph native64_32 native64_128 native64_512 --threads 1 --grad --output official_native_hybrid1.json

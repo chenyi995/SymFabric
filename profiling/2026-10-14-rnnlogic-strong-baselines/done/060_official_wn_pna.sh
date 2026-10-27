@@ -1,0 +1,1 @@
+bash run_pinned.sh run_bench.py --device cuda --cases wn18rr:12 --threads 1 --batches 1 8 32 --splits train valid --model official --variants upstream torch_all atomic_last csr_last --gradient-check --repeats 5 --warmup 2 --output gpu_official_pna.json

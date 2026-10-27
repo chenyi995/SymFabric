@@ -1,0 +1,1 @@
+bash run_pinned.sh run_bench.py --device cuda --cases FB15k-237:272 wn18rr:12 --threads 1 --batches 32 --splits train valid --variants csr_last csr_lru32 csr_lastlru32 csr_lastlru128 csr_lastlru512 --repeats 5 --warmup 2 --gradient-check --output gpu_bounded_lifetime.json

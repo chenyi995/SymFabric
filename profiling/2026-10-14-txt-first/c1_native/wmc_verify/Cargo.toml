@@ -1,0 +1,6 @@
+[package]
+name="scallop-wmc-software-control-verify"
+version="0.1.0"
+edition="2021"
+[dependencies]
+sdd={path="upstream_sdd"}
